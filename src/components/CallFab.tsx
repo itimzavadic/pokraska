@@ -4,7 +4,7 @@ export function CallFab() {
   return (
     <a
       href={`tel:${site.phoneTel}`}
-      className="glass-strong fixed bottom-24 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full text-indigo transition hover:scale-105 hover:text-orange-hot sm:bottom-28 sm:right-6 sm:h-16 sm:w-16"
+      className="fab-solid fixed bottom-24 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full transition hover:scale-105 sm:bottom-28 sm:right-6 sm:h-16 sm:w-16"
       aria-label="Позвонить"
       title="Звонок"
     >

@@ -39,7 +39,7 @@ export function BottomNav() {
       className="pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-3 sm:bottom-6"
       aria-label="Навигация по разделам"
     >
-      <div className="glass pointer-events-auto max-w-[min(96vw,56rem)] overflow-x-auto rounded-full px-2 py-2 shadow-lg">
+      <div className="nav-bar pointer-events-auto max-w-[min(96vw,56rem)] overflow-x-auto rounded-full px-2 py-2">
         <ul className="flex min-w-max items-center gap-1">
           {navItems.map((item) => {
             const isActive = active === item.id;
@@ -49,8 +49,8 @@ export function BottomNav() {
                   href={`#${item.id}`}
                   className={`relative block whitespace-nowrap rounded-full px-3 py-2 text-xs font-semibold transition sm:px-3.5 sm:text-sm ${
                     isActive
-                      ? "bg-orange text-white nav-active-dot"
-                      : "text-indigo/75 hover:bg-white/50 hover:text-indigo"
+                      ? "bg-teal text-white nav-active-dot"
+                      : "text-white/70 hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   {item.label}

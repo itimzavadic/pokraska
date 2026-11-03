@@ -1,7 +1,7 @@
 import { site } from "@/lib/content";
 
 const iconClass =
-  "flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-orange hover:bg-orange hover:text-white";
+  "flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-teal hover:bg-teal hover:text-white";
 
 export function SocialIcons() {
   return (

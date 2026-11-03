@@ -16,8 +16,8 @@ const sourceSerif = Source_Serif_4({
   display: "swap",
 });
 
-const title = `${site.tagline} в ${site.city} | ${site.companyName}`;
-const description = `${site.tagline} в ${site.city}: офисы, склады, торговые площади. Аккуратная работа в срок, прозрачная смета. Звоните ${site.phone}.`;
+const title = `${site.tagline} в ${site.region} | ${site.companyName}`;
+const description = `${site.tagline} в ${site.region}: птичники, склады, ангары, аграрные хранилища. Короткие сроки. Для юридических лиц. Звоните ${site.phone}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
@@ -27,11 +27,13 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
-    `покраска коммерческих помещений ${site.city}`,
-    `покраска офисов ${site.city}`,
-    "малярные работы для бизнеса",
-    "покраска склада",
-    "покраска торгового центра",
+    `побелка производственных помещений ${site.region}`,
+    `покраска складов ${site.city}`,
+    `мойка птичников ${site.region}`,
+    `мойка крыш ${site.region}`,
+    "побелка ангаров",
+    "покраска производственных помещений",
+    site.region,
     site.city,
   ],
   authors: [{ name: site.companyName }],
@@ -56,8 +58,8 @@ export const metadata: Metadata = {
     canonical: site.domain,
   },
   other: {
-    "geo.region": "BY-MI",
-    "geo.placename": site.city,
+    "geo.region": "BY-VI",
+    "geo.placename": site.region,
   },
 };
 
@@ -71,7 +73,7 @@ export default function RootLayout({
       lang="ru"
       className={`${manrope.variable} ${sourceSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-ivory text-indigo">
+      <body className="min-h-full bg-white text-indigo">
         <JsonLd />
         {children}
       </body>

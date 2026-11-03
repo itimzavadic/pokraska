@@ -2,7 +2,7 @@ import { scenario } from "@/lib/content";
 
 export function Scenario() {
   return (
-    <section id="scenario" className="section-pad bg-ivory">
+    <section id="scenario" className="section-pad bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
@@ -17,7 +17,7 @@ export function Scenario() {
               key={step.step}
               className="grid gap-3 border-t border-indigo/10 py-6 sm:grid-cols-[5rem_1fr] sm:gap-8"
             >
-              <span className="font-display text-3xl font-semibold text-orange">
+              <span className="font-display text-3xl font-semibold text-teal">
                 {step.step}
               </span>
               <div>
@@ -26,7 +26,7 @@ export function Scenario() {
                 </h3>
                 <p className="mt-2 max-w-2xl text-indigo/70">{step.text}</p>
                 {index === scenario.steps.length - 1 && (
-                  <a href="#contacts" className="btn-orange mt-5 inline-flex">
+                  <a href="#contacts" className="btn-primary mt-5 inline-flex">
                     Связаться
                   </a>
                 )}

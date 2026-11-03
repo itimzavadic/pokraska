@@ -2,7 +2,7 @@ import { advantages } from "@/lib/content";
 
 export function Advantages() {
   return (
-    <section id="advantages" className="section-pad bg-orange text-white">
+    <section id="advantages" className="section-pad bg-teal text-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">

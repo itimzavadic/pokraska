@@ -4,13 +4,13 @@ import { FormEvent, useState } from "react";
 import { Toast } from "./Toast";
 
 type LeadCaptureFormProps = {
-  variant?: "orange" | "indigo";
+  variant?: "teal" | "indigo";
   submitLabel?: string;
   compact?: boolean;
 };
 
 export function LeadCaptureForm({
-  variant = "orange",
+  variant = "teal",
   submitLabel = "Отправить заявку",
   compact = false,
 }: LeadCaptureFormProps) {
@@ -39,14 +39,14 @@ export function LeadCaptureForm({
   }
 
   const fieldClass =
-    variant === "orange"
+    variant === "teal"
       ? "w-full rounded-xl border border-white/30 bg-white/15 px-4 py-3 text-white placeholder:text-white/60"
-      : "w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-orange/70";
+      : "w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-teal-soft";
 
   const buttonClass =
-    variant === "orange"
-      ? "w-full rounded-xl bg-white px-4 py-3 font-semibold text-indigo transition hover:bg-ivory"
-      : "w-full rounded-xl bg-orange px-4 py-3 font-semibold text-white transition hover:bg-orange-hot";
+    variant === "teal"
+      ? "w-full rounded-xl bg-white px-4 py-3 font-semibold text-indigo transition hover:bg-muted"
+      : "w-full rounded-xl bg-teal px-4 py-3 font-semibold text-white transition hover:bg-teal-hot";
 
   return (
     <>
@@ -58,7 +58,7 @@ export function LeadCaptureForm({
               name="name"
               type="text"
               autoComplete="name"
-              placeholder="Ваше имя"
+              placeholder="Контактное лицо"
               className={fieldClass}
               required
             />
@@ -81,7 +81,7 @@ export function LeadCaptureForm({
             <textarea
               name="message"
               rows={3}
-              placeholder="Тип объекта, площадь, желаемые сроки"
+              placeholder="Организация, тип объекта, площадь, сроки"
               className={`${fieldClass} resize-y`}
             />
           </label>
@@ -95,7 +95,7 @@ export function LeadCaptureForm({
           {submitLabel}
         </button>
         <p
-          className={`text-xs ${variant === "orange" ? "text-white/75" : "text-white/70"}`}
+          className={`text-xs ${variant === "teal" ? "text-white/75" : "text-white/70"}`}
         >
           Демо-форма: заявка не отправляется на сервер.
         </p>

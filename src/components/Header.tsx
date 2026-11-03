@@ -8,7 +8,7 @@ export function Header() {
         aria-hidden
       />
       <div
-        className="decorative-square -right-2 bottom-0 h-12 w-12 bg-orange sm:h-16 sm:w-16"
+        className="decorative-square -right-2 bottom-0 h-12 w-12 bg-teal sm:h-16 sm:w-16"
         aria-hidden
       />
       <div
@@ -16,13 +16,13 @@ export function Header() {
         aria-hidden
       />
       <div
-        className="decorative-square left-20 bottom-0 h-8 w-8 bg-orange/70"
+        className="decorative-square left-20 bottom-0 h-8 w-8 bg-teal/70"
         aria-hidden
       />
 
       <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5">
         <a href="#hero" className="group flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center bg-indigo font-display text-lg font-bold text-orange transition group-hover:bg-indigo-deep">
+          <span className="flex h-11 w-11 items-center justify-center bg-indigo font-display text-lg font-bold text-teal transition group-hover:bg-indigo-deep">
             П
           </span>
           <div className="leading-tight">
@@ -33,7 +33,7 @@ export function Header() {
           </div>
         </a>
 
-        <a href="#contacts" className="btn-orange text-sm sm:text-base">
+        <a href="#contacts" className="btn-primary text-sm sm:text-base">
           Связаться
         </a>
       </div>

@@ -1,28 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --bg-ivory: #f7f3eb;
-  --bg-ivory-deep: #efe8dc;
-  --orange: #ff8a1a;
-  --orange-hot: #ff6b00;
-  --orange-soft: #ffb347;
-  --indigo: #2a2f7a;
-  --indigo-deep: #1c2160;
-  --indigo-soft: #3d4499;
+  --bg-white: #ffffff;
+  --bg-muted: #f3f7f6;
+  --teal: #0f9d8a;
+  --teal-hot: #0b7f70;
+  --teal-soft: #3db8a6;
+  --indigo: #1a1f5c;
+  --indigo-deep: #12163f;
+  --indigo-soft: #2a3178;
   --white: #ffffff;
-  --glass-bg: rgba(255, 255, 255, 0.42);
-  --glass-border: rgba(255, 255, 255, 0.55);
-  --glass-shadow: 0 8px 32px rgba(28, 33, 96, 0.14);
-  --radius-pill: 999px;
   --section-pad: clamp(3.5rem, 8vw, 6.5rem);
 }
 
 @theme inline {
-  --color-ivory: var(--bg-ivory);
-  --color-ivory-deep: var(--bg-ivory-deep);
-  --color-orange: var(--orange);
-  --color-orange-hot: var(--orange-hot);
-  --color-orange-soft: var(--orange-soft);
+  --color-surface: var(--bg-white);
+  --color-muted: var(--bg-muted);
+  --color-teal: var(--teal);
+  --color-teal-hot: var(--teal-hot);
+  --color-teal-soft: var(--teal-soft);
   --color-indigo: var(--indigo);
   --color-indigo-deep: var(--indigo-deep);
   --color-indigo-soft: var(--indigo-soft);
@@ -35,13 +31,13 @@ html {
 }
 
 body {
-  background: var(--bg-ivory);
+  background: var(--bg-white);
   color: var(--indigo);
   font-family: var(--font-manrope), system-ui, sans-serif;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--orange) 35%, transparent);
+  background: color-mix(in srgb, var(--teal) 35%, transparent);
   color: var(--indigo-deep);
 }
 
@@ -49,50 +45,34 @@ body {
   font-family: var(--font-source-serif), Georgia, serif;
 }
 
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.65);
-}
-
-.glass-strong {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(22px) saturate(180%);
-  -webkit-backdrop-filter: blur(22px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
 .section-pad {
   padding-block: var(--section-pad);
 }
 
 .accent-word {
-  color: var(--orange-hot);
+  color: var(--teal-hot);
 }
 
-.btn-orange {
+.btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: var(--orange);
+  background: var(--teal);
   color: var(--white);
   font-weight: 600;
   padding: 0.85rem 1.5rem;
   border-radius: 0.75rem;
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 20px rgba(255, 138, 26, 0.28);
+  box-shadow: 0 8px 20px rgba(15, 157, 138, 0.28);
 }
 
-.btn-orange:hover {
-  background: var(--orange-hot);
+.btn-primary:hover {
+  background: var(--teal-hot);
   transform: translateY(-1px);
 }
 
-.btn-orange:active {
+.btn-primary:active {
   transform: translateY(0);
 }
 
@@ -114,6 +94,22 @@ body {
   background: color-mix(in srgb, var(--indigo) 6%, transparent);
 }
 
+.nav-bar {
+  background: var(--indigo);
+  border: 1px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  box-shadow: 0 12px 28px rgba(18, 22, 63, 0.28);
+}
+
+.fab-solid {
+  background: var(--teal);
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(15, 157, 138, 0.35);
+}
+
+.fab-solid:hover {
+  background: var(--teal-hot);
+}
+
 .reveal {
   animation: reveal-up 0.7s ease both;
 }
@@ -129,6 +125,20 @@ body {
   }
 }
 
+@keyframes nav-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(15, 157, 138, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(15, 157, 138, 0);
+  }
+}
+
+.nav-active-dot {
+  animation: nav-pulse 2s ease infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -136,24 +146,10 @@ body {
 
   .reveal,
   .nav-active-dot,
-  .btn-orange {
+  .btn-primary {
     animation: none !important;
     transition: none !important;
   }
-}
-
-@keyframes nav-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 138, 26, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(255, 138, 26, 0);
-  }
-}
-
-.nav-active-dot {
-  animation: nav-pulse 2s ease infinite;
 }
 
 .decorative-square {
@@ -168,6 +164,6 @@ textarea {
 
 input:focus,
 textarea:focus {
-  outline: 2px solid var(--orange);
+  outline: 2px solid var(--teal);
   outline-offset: 1px;
 }

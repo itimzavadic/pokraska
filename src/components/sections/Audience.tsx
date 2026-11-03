@@ -2,7 +2,7 @@ import { audience } from "@/lib/content";
 
 export function Audience() {
   return (
-    <section id="audience" className="section-pad bg-orange text-white">
+    <section id="audience" className="section-pad bg-teal text-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
@@ -15,7 +15,7 @@ export function Audience() {
           {audience.items.map((item) => (
             <li
               key={item.title}
-              className="border border-white/25 bg-white/10 p-5 backdrop-blur-[2px] transition hover:bg-white/15"
+              className="border border-white/25 bg-white/10 p-5 transition hover:bg-white/15"
             >
               <h3 className="font-display text-xl font-semibold">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/85">

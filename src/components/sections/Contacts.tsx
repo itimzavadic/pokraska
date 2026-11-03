@@ -3,11 +3,11 @@ import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 
 export function Contacts() {
   return (
-    <section id="contacts" className="section-pad bg-ivory">
+    <section id="contacts" className="section-pad bg-muted">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="relative overflow-hidden border border-indigo/10 bg-white">
           <div
-            className="decorative-square right-0 top-0 h-24 w-24 bg-orange"
+            className="decorative-square right-0 top-0 h-24 w-24 bg-teal"
             aria-hidden
           />
           <div
@@ -24,7 +24,7 @@ export function Contacts() {
 
               <dl className="mt-8 space-y-4 text-sm sm:text-base">
                 <div>
-                  <dt className="font-semibold text-orange-hot">Телефон</dt>
+                  <dt className="font-semibold text-teal-hot">Телефон</dt>
                   <dd>
                     <a
                       href={`tel:${site.phoneTel}`}
@@ -35,7 +35,7 @@ export function Contacts() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-semibold text-orange-hot">Email</dt>
+                  <dt className="font-semibold text-teal-hot">Email</dt>
                   <dd>
                     <a
                       href={`mailto:${site.email}`}
@@ -46,28 +46,33 @@ export function Contacts() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-semibold text-orange-hot">Адрес</dt>
+                  <dt className="font-semibold text-teal-hot">Адрес</dt>
                   <dd className="text-indigo">{site.address}</dd>
                 </div>
                 <div>
-                  <dt className="font-semibold text-orange-hot">Режим</dt>
+                  <dt className="font-semibold text-teal-hot">Регион</dt>
+                  <dd className="text-indigo">{site.region}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-teal-hot">Режим</dt>
                   <dd className="text-indigo">{site.workHours}</dd>
                 </div>
               </dl>
 
-              <a href={`tel:${site.phoneTel}`} className="btn-orange mt-8 inline-flex">
+              <a href={`tel:${site.phoneTel}`} className="btn-primary mt-8 inline-flex">
                 {contacts.cta}
               </a>
             </div>
 
-            <div className="bg-orange p-6 text-white sm:p-8">
+            <div className="bg-teal p-6 text-white sm:p-8">
               <h3 className="font-display text-xl font-semibold sm:text-2xl">
                 Финальная заявка
               </h3>
               <p className="mt-2 mb-5 text-sm text-white/85">
-                Напишите коротко об объекте — вернёмся с расчётом.
+                Напишите об объекте организации — вернёмся с расчётом сроков и
+                стоимости.
               </p>
-              <LeadCaptureForm variant="orange" submitLabel="Отправить" />
+              <LeadCaptureForm variant="teal" submitLabel="Отправить" />
             </div>
           </div>
         </div>

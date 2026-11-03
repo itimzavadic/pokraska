@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Source_Serif_4 } from "next/font/google";
 import { site } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
+import { AgentationDev } from "@/components/AgentationDev";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -76,6 +77,7 @@ export default function RootLayout({
       <body className="min-h-full bg-white text-indigo">
         <JsonLd />
         {children}
+        <AgentationDev />
       </body>
     </html>
   );

@@ -1,12 +1,9 @@
 import { scenario } from "@/lib/content";
-import { backgrounds } from "@/lib/backgrounds";
-import { SectionBackdrop } from "@/components/SectionBackdrop";
 
 export function Scenario() {
   return (
-    <section id="scenario" className="section-pad relative overflow-hidden">
-      <SectionBackdrop src={backgrounds.warehouseAlt} tone="light" />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="scenario" className="section-pad bg-white">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
             {scenario.title}
@@ -29,9 +26,14 @@ export function Scenario() {
                 </h3>
                 <p className="mt-2 max-w-2xl text-indigo/75">{step.text}</p>
                 {index === scenario.steps.length - 1 && (
-                  <a href="#contacts" className="btn-primary mt-5 inline-flex">
-                    Связаться
-                  </a>
+                  <div className="mt-5 flex flex-wrap items-center gap-4">
+                    <a href="#contacts" className="btn-primary inline-flex">
+                      {scenario.ctaLabel}
+                    </a>
+                    <p className="font-display text-lg font-semibold text-indigo">
+                      {scenario.ctaHint}
+                    </p>
+                  </div>
                 )}
               </div>
             </li>

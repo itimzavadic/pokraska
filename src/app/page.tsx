@@ -1,7 +1,4 @@
-import { TopBar } from "@/components/TopBar";
 import { Header } from "@/components/Header";
-import { BottomNav } from "@/components/BottomNav";
-import { CallFab } from "@/components/CallFab";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Audience } from "@/components/sections/Audience";
@@ -10,16 +7,15 @@ import { Lead } from "@/components/sections/Lead";
 import { Scenario } from "@/components/sections/Scenario";
 import { Advantages } from "@/components/sections/Advantages";
 import { Pricing } from "@/components/sections/Pricing";
-import { SocialProof } from "@/components/sections/SocialProof";
+import { Gallery } from "@/components/sections/Gallery";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contacts } from "@/components/sections/Contacts";
 
 export default function HomePage() {
   return (
     <>
-      <TopBar />
       <Header />
-      <main className="pb-28">
+      <main>
         <Hero />
         <Audience />
         <Result />
@@ -27,13 +23,11 @@ export default function HomePage() {
         <Scenario />
         <Advantages />
         <Pricing />
-        <SocialProof />
+        <Gallery />
         <FAQ />
         <Contacts />
       </main>
       <Footer />
-      <BottomNav />
-      <CallFab />
     </>
   );
 }

@@ -16,6 +16,7 @@ export function LeadCaptureForm({
 }: LeadCaptureFormProps) {
   const [toastOpen, setToastOpen] = useState(false);
   const [error, setError] = useState("");
+  const [consent, setConsent] = useState(false);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -32,9 +33,14 @@ export function LeadCaptureForm({
       setError("Укажите корректный телефон");
       return;
     }
+    if (!consent) {
+      setError("Нужно согласие на обработку персональных данных");
+      return;
+    }
 
     setError("");
     form.reset();
+    setConsent(false);
     setToastOpen(true);
   }
 
@@ -45,8 +51,11 @@ export function LeadCaptureForm({
 
   const buttonClass =
     variant === "teal"
-      ? "w-full rounded-xl bg-white px-4 py-3 font-semibold text-indigo transition hover:bg-muted"
-      : "w-full rounded-xl bg-teal px-4 py-3 font-semibold text-white transition hover:bg-teal-hot";
+      ? "w-full rounded-xl bg-white px-4 py-3 font-semibold text-indigo transition hover:bg-muted disabled:opacity-50"
+      : "w-full rounded-xl bg-teal px-4 py-3 font-semibold text-white transition hover:bg-teal-hot disabled:opacity-50";
+
+  const checkLabelClass =
+    variant === "teal" ? "text-white/85" : "text-white/80";
 
   return (
     <>
@@ -86,12 +95,24 @@ export function LeadCaptureForm({
             />
           </label>
         )}
+        <label className={`flex items-start gap-3 text-sm ${checkLabelClass}`}>
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-1 h-4 w-4 shrink-0 accent-teal"
+            required
+          />
+          <span>
+            Согласен(на) на обработку персональных данных для связи по заявке
+          </span>
+        </label>
         {error && (
           <p className="text-sm font-medium text-white/95" role="alert">
             {error}
           </p>
         )}
-        <button type="submit" className={buttonClass}>
+        <button type="submit" className={buttonClass} disabled={!consent}>
           {submitLabel}
         </button>
         <p

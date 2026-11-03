@@ -1,12 +1,9 @@
 import { result } from "@/lib/content";
-import { backgrounds } from "@/lib/backgrounds";
-import { SectionBackdrop } from "@/components/SectionBackdrop";
 
 export function Result() {
   return (
-    <section id="result" className="section-pad relative overflow-hidden">
-      <SectionBackdrop src={backgrounds.factory} tone="light" />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="result" className="section-pad bg-white">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
             {result.title}

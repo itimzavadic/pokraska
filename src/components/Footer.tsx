@@ -11,7 +11,9 @@ export function Footer() {
             {site.companyName}
           </p>
           <p className="mt-2 max-w-md text-white/85">
-            {site.tagline} · {site.region}. {site.responseTime}
+            {site.tagline} ·{" "}
+            <span className="text-teal-soft">{site.city}</span> и {site.region}.{" "}
+            {site.responseTime}
           </p>
 
           <div className="mt-6 space-y-2 text-sm text-white">
@@ -26,14 +28,18 @@ export function Footer() {
               </a>
             </p>
             <p>{site.address}</p>
-            <p className="text-white/70">{site.workHours}</p>
           </div>
 
-          <div className="mt-8">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-soft">
-              Связь
+          <div className="mt-10 rounded-xl border border-teal/40 bg-indigo-deep/50 p-5">
+            <p className="font-display text-xl font-semibold text-teal-soft sm:text-2xl">
+              Каналы связи
             </p>
-            <SocialIcons />
+            <p className="mt-2 text-sm text-white/75">
+              Напишите или позвоните — ответим в рабочее время
+            </p>
+            <div className="mt-4">
+              <SocialIcons />
+            </div>
           </div>
         </div>
 
@@ -55,7 +61,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
-            © 2026 {site.companyName}. {site.region}.
+            © 2026 {site.companyName}. {site.city}, {site.region}.
           </p>
           <p>УНП / юр. данные — [уточнить у заказчика]</p>
         </div>

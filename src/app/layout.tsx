@@ -17,8 +17,8 @@ const sourceSerif = Source_Serif_4({
   display: "swap",
 });
 
-const title = `${site.tagline} в ${site.region} | ${site.companyName}`;
-const description = `${site.tagline} в ${site.region}: птичники, склады, ангары, аграрные хранилища. Короткие сроки. Для юридических лиц. Звоните ${site.phone}.`;
+const title = `${site.tagline} в ${site.city} | ${site.companyName}`;
+const description = `${site.tagline} в ${site.city} и ${site.region}. Красим стены, потолки и конструкции складов, птичников и ангаров. Для юридических лиц. Короткие сроки. Звоните ${site.phone}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
-    `побелка производственных помещений ${site.region}`,
     `покраска складов ${site.city}`,
+    `покраска производственных помещений ${site.region}`,
+    `побелка помещений ${site.city}`,
     `мойка птичников ${site.region}`,
-    `мойка крыш ${site.region}`,
-    "побелка ангаров",
-    "покраска производственных помещений",
-    site.region,
+    `мойка крыш ${site.city}`,
     site.city,
+    site.region,
+    site.companyName,
   ],
   authors: [{ name: site.companyName }],
   openGraph: {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   other: {
     "geo.region": "BY-VI",
-    "geo.placename": site.region,
+    "geo.placename": `${site.city}, ${site.region}`,
   },
 };
 

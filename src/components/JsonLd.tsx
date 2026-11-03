@@ -5,7 +5,7 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     name: site.companyName,
-    description: `${site.tagline} в ${site.region}`,
+    description: `${site.tagline} в ${site.city} и ${site.region}`,
     url: site.domain,
     telephone: site.phoneTel,
     email: site.email,
@@ -21,8 +21,12 @@ export function JsonLd() {
         "@type": "AdministrativeArea",
         name: site.region,
       },
+      {
+        "@type": "City",
+        name: site.city,
+      },
       ...site.areaServed
-        .filter((name) => name !== site.region)
+        .filter((name) => name !== site.region && name !== site.city)
         .map((city) => ({
           "@type": "City",
           name: city,
@@ -30,7 +34,7 @@ export function JsonLd() {
     ],
     openingHours: "Mo-Fr 09:00-18:00",
     priceRange: "$$",
-    image: `${site.domain}/og-placeholder.png`,
+    image: `${site.domain}/images/bg/hero-paint.jpg`,
   };
 
   const services = pricing.items.map((item) => ({
@@ -42,10 +46,10 @@ export function JsonLd() {
       "@type": "LocalBusiness",
       name: site.companyName,
     },
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: site.region,
-    },
+    areaServed: [
+      { "@type": "City", name: site.city },
+      { "@type": "AdministrativeArea", name: site.region },
+    ],
     offers: {
       "@type": "Offer",
       priceCurrency: "BYN",

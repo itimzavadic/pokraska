@@ -1,15 +1,12 @@
 import { contacts, site } from "@/lib/content";
-import { backgrounds } from "@/lib/backgrounds";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
-import { SectionBackdrop } from "@/components/SectionBackdrop";
 
 export function Contacts() {
   return (
-    <section id="contacts" className="section-pad relative overflow-hidden">
-      <SectionBackdrop src={backgrounds.wash} tone="light" />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative overflow-hidden border border-indigo/10 bg-white/85 backdrop-blur-[2px]">
-          <div className="relative grid gap-10 p-6 sm:p-10 lg:grid-cols-2">
+    <section id="contacts" className="section-pad bg-muted">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="overflow-hidden border border-indigo/10 bg-white">
+          <div className="grid gap-10 p-6 sm:p-10 lg:grid-cols-2">
             <div>
               <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
                 {contacts.title}
@@ -45,11 +42,11 @@ export function Contacts() {
                 </div>
                 <div>
                   <dt className="font-semibold text-teal-hot">Регион</dt>
-                  <dd className="text-indigo">{site.region}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-teal-hot">Режим</dt>
-                  <dd className="text-indigo">{site.workHours}</dd>
+                  <dd className="text-indigo">
+                    <span className="font-semibold text-teal-hot">{site.city}</span>
+                    {" и "}
+                    {site.region}
+                  </dd>
                 </div>
               </dl>
 

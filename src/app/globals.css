@@ -150,6 +150,10 @@ body {
     animation: none !important;
     transition: none !important;
   }
+
+  .transition-all {
+    transition: none !important;
+  }
 }
 
 input,

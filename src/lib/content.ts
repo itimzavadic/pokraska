@@ -172,6 +172,7 @@ export const pricing = {
       description:
         "Побелка птичников, складов, ангаров и аграрных хранилищ. Подготовка поверхностей и нанесение состава под санитарные требования объекта.",
       price: "от [цена] BYN",
+      image: "/images/bg/service-1.jpg",
     },
     {
       id: "service-paint",
@@ -179,6 +180,7 @@ export const pricing = {
       description:
         "Покраска стен, потолков и конструкций на объектах: склады, ангары, птичники и сопутствующие помещения.",
       price: "от [цена] BYN",
+      image: "/images/bg/service-2.jpg",
     },
     {
       id: "service-wash",
@@ -186,6 +188,7 @@ export const pricing = {
       description:
         "Профессиональная мойка внутренних поверхностей перед побелкой/покраской или как отдельная услуга для поддержания чистоты объекта.",
       price: "от [цена] BYN",
+      image: "/images/bg/service-3.jpg",
     },
     {
       id: "service-roof",
@@ -193,6 +196,7 @@ export const pricing = {
       description:
         "Мойка кровель производственных и складских зданий: удаление загрязнений, подготовка к дальнейшему обслуживанию объекта.",
       price: "от [цена] BYN",
+      image: "/images/bg/service-4.jpg",
     },
   ],
   priceFactorsTitle: "Как формируется цена",

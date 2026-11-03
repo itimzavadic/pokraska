@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { pricing, site } from "@/lib/content";
 
 export function Pricing() {
@@ -17,24 +18,35 @@ export function Pricing() {
           <p className="mt-2 text-sm text-indigo/60">{pricing.note}</p>
         </div>
 
-        <ul className="mt-10 grid gap-4 md:grid-cols-2">
+        <ul className="mt-10 grid gap-5 md:grid-cols-2">
           {pricing.items.map((row) => (
             <li
               key={row.id}
               id={row.id}
-              className="flex scroll-mt-28 flex-col border border-indigo/10 bg-muted/40 p-5 sm:p-6"
+              className="flex scroll-mt-28 flex-col overflow-hidden border border-indigo/10 bg-muted/30"
             >
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <h3 className="font-display text-2xl font-semibold text-indigo sm:text-[1.65rem]">
-                  {row.service}
-                </h3>
-                <p className="shrink-0 text-lg font-semibold text-teal-hot">
-                  {row.price}
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src={row.image}
+                  alt={row.service}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <h3 className="font-display text-2xl font-semibold text-indigo sm:text-[1.65rem]">
+                    {row.service}
+                  </h3>
+                  <p className="shrink-0 text-lg font-semibold text-teal-hot">
+                    {row.price}
+                  </p>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-indigo/75">
+                  {row.description}
                 </p>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-indigo/75">
-                {row.description}
-              </p>
             </li>
           ))}
         </ul>

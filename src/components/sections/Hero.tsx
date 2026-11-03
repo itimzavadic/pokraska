@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[min(88vh,52rem)] overflow-hidden"
+      className="relative min-h-[min(88vh,52rem)] overflow-hidden bg-indigo-deep"
     >
       <Image
         src="/images/bg/hero-paint.jpg"
@@ -13,7 +13,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-center scale-[0.82] origin-center"
       />
       <div
         className="absolute inset-0 bg-[linear-gradient(105deg,rgba(18,22,63,0.88)_0%,rgba(18,22,63,0.72)_42%,rgba(15,157,138,0.35)_72%,rgba(18,22,63,0.25)_100%)]"

@@ -13,7 +13,6 @@ export function FAQ() {
           <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
             {faq.title}
           </h2>
-          <p className="mt-3 text-indigo/70 sm:text-lg">{faq.subtitle}</p>
         </div>
 
         <div className="mt-10 space-y-2">

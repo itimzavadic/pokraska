@@ -25,7 +25,7 @@ export function Hero() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-teal-soft">
             {hero.eyebrow}
           </p>
-          <h1 className="font-display text-4xl font-semibold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="font-sans text-4xl font-extrabold tracking-tight leading-[1.05] text-white sm:text-5xl lg:text-[3.4rem]">
             {hero.h1}
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">

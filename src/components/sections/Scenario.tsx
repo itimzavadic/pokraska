@@ -26,13 +26,13 @@ export function Scenario() {
                 </h3>
                 <p className="mt-2 max-w-2xl text-indigo/75">{step.text}</p>
                 {index === scenario.steps.length - 1 && (
-                  <div className="mt-5 flex flex-wrap items-center gap-4">
+                  <div className="mt-5 flex flex-col items-start gap-3">
+                    <p className="text-lg font-bold tracking-tight text-indigo sm:text-xl">
+                      {scenario.ctaHint}
+                    </p>
                     <a href="#contacts" className="btn-primary inline-flex">
                       {scenario.ctaLabel}
                     </a>
-                    <p className="font-display text-lg font-semibold text-indigo">
-                      {scenario.ctaHint}
-                    </p>
                   </div>
                 )}
               </div>

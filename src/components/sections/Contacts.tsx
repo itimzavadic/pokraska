@@ -15,7 +15,9 @@ export function Contacts() {
 
               <dl className="mt-8 space-y-4 text-sm sm:text-base">
                 <div>
-                  <dt className="font-semibold text-teal-hot">Телефон</dt>
+                  <dt className="font-semibold text-teal-hot">
+                    Телефон (свяжитесь с нами)
+                  </dt>
                   <dd>
                     <a
                       href={`tel:${site.phoneTel}`}

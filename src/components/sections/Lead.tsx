@@ -12,7 +12,7 @@ export function Lead() {
           <p className="mt-3 max-w-md text-white/90 sm:text-lg">
             {leadForm.subtitle}
           </p>
-          <ul className="mt-6 space-y-2 text-sm text-white/95">
+          <ul className="mt-6 space-y-2.5 text-lg text-white/95 sm:text-xl">
             <li>— Для юридических лиц</li>
             <li>— Короткие сроки работ</li>
             <li>— Выезд по Витебской области</li>

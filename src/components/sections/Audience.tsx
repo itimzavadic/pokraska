@@ -4,8 +4,8 @@ import { audience, site } from "@/lib/content";
 export function Audience() {
   return (
     <section id="audience" className="section-pad bg-teal text-white">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14">
-        <div>
+      <div className="mx-auto grid max-w-6xl items-stretch gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12">
+        <div className="flex flex-col justify-center">
           <div className="max-w-xl">
             <h2 className="font-display text-3xl font-semibold sm:text-4xl">
               {audience.title}
@@ -17,11 +17,11 @@ export function Audience() {
             </p>
           </div>
 
-          <div className="mt-10 max-w-sm">
+          <div className="mt-8 max-w-sm">
             <p className="font-display text-2xl font-semibold sm:text-3xl">
               {audience.lead}
             </p>
-            <ul className="mt-5 space-y-2">
+            <ul className="mt-4 space-y-2">
               {audience.items.map((item) => (
                 <li
                   key={item}
@@ -37,13 +37,13 @@ export function Audience() {
           </div>
         </div>
 
-        <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:aspect-[4/5]">
+        <div className="relative min-h-[14rem] overflow-hidden lg:min-h-0">
           <Image
             src="/images/bg/audience.jpg"
             alt="Покраска потолков и помещений"
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
-            className="object-cover"
+            className="object-cover object-center"
           />
         </div>
       </div>

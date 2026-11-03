@@ -1,18 +1,21 @@
 import { leadForm } from "@/lib/content";
+import { backgrounds } from "@/lib/backgrounds";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { SectionBackdrop } from "@/components/SectionBackdrop";
 
 export function Lead() {
   return (
-    <section id="lead" className="section-pad bg-teal text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
+    <section id="lead" className="section-pad relative overflow-hidden text-white">
+      <SectionBackdrop src={backgrounds.wash} tone="teal" />
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
         <div>
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
             {leadForm.title}
           </h2>
-          <p className="mt-3 max-w-md text-white/85 sm:text-lg">
+          <p className="mt-3 max-w-md text-white/90 sm:text-lg">
             {leadForm.subtitle}
           </p>
-          <ul className="mt-6 space-y-2 text-sm text-white/90">
+          <ul className="mt-6 space-y-2 text-sm text-white/95">
             <li>— Для юридических лиц</li>
             <li>— Короткие сроки работ</li>
             <li>— Выезд по Витебской области</li>

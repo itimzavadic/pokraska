@@ -1,26 +1,20 @@
 import { contacts, site } from "@/lib/content";
+import { backgrounds } from "@/lib/backgrounds";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { SectionBackdrop } from "@/components/SectionBackdrop";
 
 export function Contacts() {
   return (
-    <section id="contacts" className="section-pad bg-muted">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative overflow-hidden border border-indigo/10 bg-white">
-          <div
-            className="decorative-square right-0 top-0 h-24 w-24 bg-teal"
-            aria-hidden
-          />
-          <div
-            className="decorative-square bottom-0 left-0 h-16 w-16 bg-indigo"
-            aria-hidden
-          />
-
+    <section id="contacts" className="section-pad relative overflow-hidden">
+      <SectionBackdrop src={backgrounds.wash} tone="light" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="relative overflow-hidden border border-indigo/10 bg-white/85 backdrop-blur-[2px]">
           <div className="relative grid gap-10 p-6 sm:p-10 lg:grid-cols-2">
             <div>
               <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
                 {contacts.title}
               </h2>
-              <p className="mt-3 text-indigo/70 sm:text-lg">{contacts.subtitle}</p>
+              <p className="mt-3 text-indigo/75 sm:text-lg">{contacts.subtitle}</p>
 
               <dl className="mt-8 space-y-4 text-sm sm:text-base">
                 <div>
@@ -68,7 +62,7 @@ export function Contacts() {
               <h3 className="font-display text-xl font-semibold sm:text-2xl">
                 Финальная заявка
               </h3>
-              <p className="mt-2 mb-5 text-sm text-white/85">
+              <p className="mt-2 mb-5 text-sm text-white/90">
                 Напишите об объекте организации — вернёмся с расчётом сроков и
                 стоимости.
               </p>

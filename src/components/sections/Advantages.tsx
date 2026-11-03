@@ -1,14 +1,20 @@
 import { advantages } from "@/lib/content";
+import { backgrounds } from "@/lib/backgrounds";
+import { SectionBackdrop } from "@/components/SectionBackdrop";
 
 export function Advantages() {
   return (
-    <section id="advantages" className="section-pad bg-teal text-white">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section
+      id="advantages"
+      className="section-pad relative overflow-hidden text-white"
+    >
+      <SectionBackdrop src={backgrounds.factory} tone="teal" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
             {advantages.title}
           </h2>
-          <p className="mt-3 text-white/85 sm:text-lg">{advantages.subtitle}</p>
+          <p className="mt-3 text-white/90 sm:text-lg">{advantages.subtitle}</p>
         </div>
 
         <ul className="mt-10 grid gap-5 md:grid-cols-2">
@@ -19,7 +25,7 @@ export function Advantages() {
             >
               <div>
                 <h3 className="font-display text-xl font-semibold">{item.title}</h3>
-                <p className="mt-2 text-white/85">{item.text}</p>
+                <p className="mt-2 text-white/90">{item.text}</p>
               </div>
             </li>
           ))}

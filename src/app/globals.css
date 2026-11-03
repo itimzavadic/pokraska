@@ -152,11 +152,6 @@ body {
   }
 }
 
-.decorative-square {
-  position: absolute;
-  pointer-events: none;
-}
-
 input,
 textarea {
   font: inherit;

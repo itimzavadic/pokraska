@@ -1,4 +1,7 @@
+import Image from "next/image";
 import { hero, site } from "@/lib/content";
+import { backgrounds } from "@/lib/backgrounds";
+import { SectionBackdrop } from "@/components/SectionBackdrop";
 
 export function Hero() {
   return (
@@ -6,18 +9,7 @@ export function Hero() {
       id="hero"
       className="section-pad relative overflow-hidden bg-white"
     >
-      <div
-        className="decorative-square -right-8 top-10 h-40 w-40 bg-teal/20"
-        aria-hidden
-      />
-      <div
-        className="decorative-square left-[8%] top-24 h-16 w-16 bg-indigo/10"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(15,157,138,0.16),_transparent_50%),radial-gradient(ellipse_at_bottom_left,_rgba(26,31,92,0.08),_transparent_45%)]"
-        aria-hidden
-      />
+      <SectionBackdrop src={backgrounds.warehouse} tone="light" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="reveal">
@@ -27,7 +19,7 @@ export function Hero() {
           <h1 className="font-display text-4xl font-semibold leading-[1.1] text-indigo sm:text-5xl lg:text-[3.2rem]">
             {hero.h1}
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-indigo/75 sm:text-lg">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-indigo/80 sm:text-lg">
             {hero.subtitle}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -41,19 +33,27 @@ export function Hero() {
         </div>
 
         <div className="relative reveal" style={{ animationDelay: "120ms" }}>
-          <div className="aspect-[4/5] overflow-hidden bg-muted shadow-[0_24px_60px_rgba(26,31,92,0.12)] sm:aspect-[5/4] lg:aspect-[4/5]">
+          <div className="relative aspect-[4/5] overflow-hidden shadow-[0_24px_60px_rgba(26,31,92,0.18)] sm:aspect-[5/4] lg:aspect-[4/5]">
+            <Image
+              src={backgrounds.hangar}
+              alt="Окрашенное промышленное помещение"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover brightness-[0.85] saturate-[0.7]"
+              priority
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(160deg,rgba(15,157,138,0.55)_0%,rgba(18,22,63,0.7)_100%)]" />
             <div className="relative flex h-full flex-col justify-between p-6 sm:p-8">
-              <div className="absolute inset-0 bg-[linear-gradient(145deg,_#0f9d8a_0%,_#0f9d8a_42%,_#1a1f5c_42%,_#1a1f5c_100%)] opacity-95" />
-              <div className="relative">
+              <div>
                 <p className="font-display text-2xl font-semibold text-white sm:text-3xl">
                   Птичники · Склады · Ангары
                 </p>
-                <p className="mt-2 max-w-xs text-sm text-white/85">
+                <p className="mt-2 max-w-xs text-sm text-white/90">
                   Побелка, покраска, мойка помещений и крыш — в короткие сроки.
                 </p>
               </div>
-              <div className="relative grid grid-cols-2 gap-3">
-                <div className="bg-white/15 p-4">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-white/15 p-4 backdrop-blur-[2px]">
                   <p className="text-xs uppercase tracking-wide text-teal-soft">
                     Плюс
                   </p>
@@ -61,7 +61,7 @@ export function Hero() {
                     короткие сроки
                   </p>
                 </div>
-                <div className="bg-white/15 p-4">
+                <div className="bg-white/15 p-4 backdrop-blur-[2px]">
                   <p className="text-xs uppercase tracking-wide text-teal-soft">
                     Гео
                   </p>
@@ -72,14 +72,6 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div
-            className="absolute -bottom-3 -left-3 h-16 w-16 bg-indigo"
-            aria-hidden
-          />
-          <div
-            className="absolute -right-3 -top-3 h-12 w-12 bg-teal"
-            aria-hidden
-          />
         </div>
       </div>
     </section>

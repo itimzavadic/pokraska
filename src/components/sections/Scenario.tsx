@@ -28,12 +28,16 @@ export function Scenario() {
           </div>
         </RevealOnScroll>
 
-        <ol className="relative mt-10 border-l-2 border-teal/50 pl-6 sm:pl-8">
+        <ol className="relative mt-10 ml-1">
+          <span
+            className="absolute bottom-3 left-[13px] top-3 w-0.5 bg-teal/55"
+            aria-hidden
+          />
           {scenario.steps.map((step, index) => (
             <RevealOnScroll key={step.step} delayMs={index * 80}>
-              <li className="relative pb-8 last:pb-0">
+              <li className="relative pb-8 pl-12 last:pb-0 sm:pl-14">
                 <span
-                  className="absolute -left-[1.9rem] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-teal text-[10px] font-bold text-white sm:-left-[2.15rem] sm:h-7 sm:w-7 sm:text-xs"
+                  className="absolute left-0 top-0.5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-teal text-xs font-bold text-white ring-4 ring-white/90"
                   aria-hidden
                 >
                   {index + 1}

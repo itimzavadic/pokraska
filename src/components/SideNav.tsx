@@ -76,10 +76,7 @@ export function SideNav({ open, onClose }: SideNavProps) {
             </ul>
           </div>
 
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo/50">
-            Разделы
-          </p>
-          <ul className="mt-3 space-y-1">
+          <ul className="space-y-1">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a

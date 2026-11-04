@@ -4,7 +4,7 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 export function Scenario() {
   return (
-    <section id="scenario" className="relative overflow-hidden py-16 sm:py-20">
+    <section id="scenario" className="section-pad relative overflow-hidden">
       <Image
         src="/images/bg/scenario.jpg"
         alt=""
@@ -28,14 +28,14 @@ export function Scenario() {
           </div>
         </RevealOnScroll>
 
-        <ol className="relative mt-10 ml-1">
+        <ol className="relative mt-12 ml-1">
           <span
-            className="absolute bottom-3 left-[13px] top-3 w-0.5 bg-teal/55"
+            className="absolute bottom-4 left-[13px] top-3 w-0.5 bg-teal/55"
             aria-hidden
           />
           {scenario.steps.map((step, index) => (
             <RevealOnScroll key={step.step} delayMs={index * 80}>
-              <li className="relative pb-8 pl-12 last:pb-0 sm:pl-14">
+              <li className="relative pb-10 pl-12 last:pb-0 sm:pb-12 sm:pl-14">
                 <span
                   className="absolute left-0 top-0.5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-teal text-xs font-bold text-white ring-4 ring-white/90"
                   aria-hidden

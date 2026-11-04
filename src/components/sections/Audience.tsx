@@ -16,7 +16,7 @@ export function Audience() {
             {audience.subtitle}
           </p>
 
-          <p className="mt-8 font-sans text-sm font-bold uppercase tracking-[0.14em] text-teal-soft">
+          <p className="mt-8 font-sans text-sm font-bold uppercase tracking-[0.14em] text-white">
             {audience.lead}
           </p>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -34,13 +34,14 @@ export function Audience() {
         </div>
 
         <div className="mx-auto w-full max-w-[15.5rem] shrink-0 sm:max-w-[17rem] lg:mx-0">
-          <div className="relative aspect-[3/4] overflow-hidden border border-white/25 shadow-[0_16px_40px_rgba(18,22,63,0.25)]">
+          <div className="overflow-hidden border border-white/25 bg-white/10 shadow-[0_16px_40px_rgba(18,22,63,0.25)]">
             <Image
               src="/images/bg/audience.jpg"
               alt="Процесс покраски: валик на удлинителе"
-              fill
+              width={680}
+              height={1020}
               sizes="272px"
-              className="object-cover object-[center_75%]"
+              className="h-auto w-full object-contain"
             />
           </div>
           <p className="mt-3 text-center text-xs font-medium uppercase tracking-wide text-white/75">

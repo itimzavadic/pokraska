@@ -1,74 +1,64 @@
+/* Hallmark · shape: Feature Stack · genre: modern-minimal · theme: brand (teal/indigo kept) · redesign: full
+ * paper: #fff · accent: #0f9d8a · display: Source Serif 4 · body: Manrope · hero: Poster kept · nav: sticky wordmark · footer: mast kept · signature: open section air
+ * axes: light/roman-serif/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P_ok H_ok E_ok S_ok R_ok V_ok · weakest: dense blocks, opened section gaps and unbundled cards */
+/* Hallmark · copy: verbatim */
+/* Hallmark · waive 7b · brand keeps near-white paper and on-teal ink · user asked to keep teal/indigo look */
 @import "tailwindcss";
+@import "./tokens.css";
+@import "./base.css" layer(base);
 
-:root {
-  --bg-white: #ffffff;
-  --bg-muted: #f3f7f6;
-  --teal: #0f9d8a;
-  --teal-hot: #0b7f70;
-  --teal-soft: #3db8a6;
-  --indigo: #1a1f5c;
-  --indigo-deep: #12163f;
-  --indigo-soft: #2a3178;
-  --white: #ffffff;
-  --section-pad: clamp(3.5rem, 8vw, 6.5rem);
-}
-
-@theme inline {
-  --color-surface: var(--bg-white);
-  --color-muted: var(--bg-muted);
-  --color-teal: var(--teal);
-  --color-teal-hot: var(--teal-hot);
-  --color-teal-soft: var(--teal-soft);
-  --color-indigo: var(--indigo);
-  --color-indigo-deep: var(--indigo-deep);
-  --color-indigo-soft: var(--indigo-soft);
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-source-serif);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg-white);
-  color: var(--indigo);
-  font-family: var(--font-manrope), system-ui, sans-serif;
-}
-
-::selection {
-  background: color-mix(in srgb, var(--teal) 35%, transparent);
-  color: var(--indigo-deep);
-}
-
-.font-display {
-  font-family: var(--font-source-serif), Georgia, serif;
+.container-site {
+  width: 100%;
+  max-width: var(--container);
+  min-width: 0;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  box-sizing: border-box;
 }
 
 .section-pad {
-  padding-block: var(--section-pad);
+  padding-block: var(--section-gap);
+}
+
+.font-display {
+  font-family: var(--font-display);
 }
 
 .accent-word {
-  color: var(--teal-hot);
+  color: var(--color-teal-hot);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: color-mix(in srgb, var(--color-ink) 55%, transparent);
 }
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  background: var(--teal);
-  color: var(--white);
+  gap: var(--space-xs);
+  max-width: 100%;
+  box-sizing: border-box;
+  background: var(--color-teal);
+  color: var(--color-on-dark);
   font-weight: 600;
-  padding: 0.85rem 1.5rem;
-  border-radius: 0.75rem;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 20px rgba(15, 157, 138, 0.28);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform var(--dur-short) var(--ease-out),
+    background var(--dur-short) var(--ease-out),
+    box-shadow var(--dur-short) var(--ease-out);
 }
 
 .btn-primary:hover {
-  background: var(--teal-hot);
+  background: var(--color-teal-hot);
   transform: translateY(-1px);
 }
 
@@ -80,38 +70,44 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  color: var(--indigo);
+  gap: var(--space-xs);
+  max-width: 100%;
+  box-sizing: border-box;
+  color: var(--color-indigo);
   font-weight: 600;
-  padding: 0.85rem 1.5rem;
-  border-radius: 0.75rem;
-  border: 1.5px solid color-mix(in srgb, var(--indigo) 25%, transparent);
-  transition: border-color 0.2s ease, background 0.2s ease;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-card);
+  border: 1.5px solid color-mix(in srgb, var(--color-indigo) 25%, transparent);
+  transition:
+    border-color var(--dur-short) var(--ease-out),
+    background var(--dur-short) var(--ease-out);
 }
 
 .btn-ghost-indigo:hover {
-  border-color: var(--indigo);
-  background: color-mix(in srgb, var(--indigo) 6%, transparent);
+  border-color: var(--color-indigo);
+  background: color-mix(in srgb, var(--color-indigo) 6%, transparent);
 }
 
-.nav-bar {
-  background: var(--indigo);
-  border: 1px solid color-mix(in srgb, var(--teal) 35%, transparent);
-  box-shadow: 0 12px 28px rgba(18, 22, 63, 0.28);
+.btn-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  box-sizing: border-box;
+  color: var(--color-on-dark);
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-card);
+  border: 1.5px solid color-mix(in srgb, var(--color-on-dark) 40%, transparent);
+  transition: background var(--dur-short) var(--ease-out);
 }
 
-.fab-solid {
-  background: var(--teal);
-  color: var(--white);
-  box-shadow: 0 10px 24px rgba(15, 157, 138, 0.35);
-}
-
-.fab-solid:hover {
-  background: var(--teal-hot);
+.btn-ghost-light:hover {
+  background: color-mix(in srgb, var(--color-on-dark) 10%, transparent);
 }
 
 .reveal {
-  animation: reveal-up 0.7s ease both;
+  animation: reveal-up 0.7s var(--ease-out) both;
 }
 
 @keyframes reveal-up {
@@ -125,33 +121,14 @@ body {
   }
 }
 
-@keyframes nav-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(15, 157, 138, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(15, 157, 138, 0);
-  }
-}
-
-.nav-active-dot {
-  animation: nav-pulse 2s ease infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .reveal,
-  .nav-active-dot,
   .btn-primary {
     animation: none !important;
-    transition: none !important;
-  }
-
-  .transition-all {
     transition: none !important;
   }
 }
@@ -159,10 +136,4 @@ body {
 input,
 textarea {
   font: inherit;
-}
-
-input:focus,
-textarea:focus {
-  outline: 2px solid var(--teal);
-  outline-offset: 1px;
 }

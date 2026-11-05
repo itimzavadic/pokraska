@@ -4,28 +4,24 @@ import { audience, site } from "@/lib/content";
 export function Audience() {
   return (
     <section id="audience" className="section-pad bg-teal text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-12">
-        <div className="min-w-0 flex-1">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
-            Для юридических лиц · <span className="text-white">{site.city}</span>
+      <div className="container-site flex min-w-0 flex-col gap-14 lg:flex-row lg:items-start lg:gap-20">
+        <div className="w-full min-w-0 flex-1">
+          <p className="label mb-4 text-white/80">
+            Для юридических лиц · {site.city}
           </p>
           <h2 className="max-w-xl font-sans text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             {audience.title}
           </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-            {audience.subtitle}
-          </p>
+          <p className="lead mt-6 max-w-xl text-white/90">{audience.subtitle}</p>
 
-          <p className="mt-8 font-sans text-sm font-bold uppercase tracking-[0.14em] text-white">
-            {audience.lead}
-          </p>
-          <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+          <p className="mt-14 text-sm font-semibold text-white">{audience.lead}</p>
+          <ul className="mt-8 grid gap-10 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12">
             {audience.items.map((item) => (
-              <li key={item.title} className="border-l-2 border-white/50 pl-4">
+              <li key={item.title} className="border-l-2 border-white/40 pl-5">
                 <h3 className="font-sans text-lg font-bold tracking-tight text-white">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-sm leading-relaxed text-white/85">
+                <p className="mt-3 text-sm leading-relaxed text-white/85">
                   {item.text}
                 </p>
               </li>
@@ -33,18 +29,18 @@ export function Audience() {
           </ul>
         </div>
 
-        <div className="mx-auto w-full max-w-[15.5rem] shrink-0 sm:max-w-[17rem] lg:mx-0">
-          <div className="overflow-hidden border border-white/25 bg-white/10 shadow-[0_16px_40px_rgba(18,22,63,0.25)]">
+        <div className="mx-auto w-full max-w-[14rem] shrink-0 lg:mx-0 lg:pt-2">
+          <div className="overflow-hidden border border-white/20">
             <Image
               src="/images/bg/audience.jpg"
               alt="Процесс покраски: валик на удлинителе"
               width={680}
               height={1020}
-              sizes="272px"
+              sizes="224px"
               className="h-auto w-full object-contain"
             />
           </div>
-          <p className="mt-3 text-center text-xs font-medium uppercase tracking-wide text-white/75">
+          <p className="label mt-4 text-center text-white/70">
             Процесс на объекте
           </p>
         </div>

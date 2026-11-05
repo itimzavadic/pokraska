@@ -3,11 +3,8 @@ import { hero } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative overflow-hidden bg-indigo-deep"
-    >
-      <div className="relative h-[clamp(26rem,62vw,40rem)] sm:h-[clamp(28rem,48vw,38rem)]">
+    <section id="hero" className="relative overflow-hidden bg-indigo-deep">
+      <div className="relative min-h-[min(68vh,34rem)] sm:min-h-[min(64vh,36rem)]">
         <Image
           src="/images/bg/hero-paint.jpg"
           alt="Промышленная покраска конструкций"
@@ -17,29 +14,22 @@ export function Hero() {
           className="object-cover object-center"
         />
         <div
-          className="absolute inset-0 bg-[linear-gradient(105deg,rgba(18,22,63,0.86)_0%,rgba(18,22,63,0.7)_42%,rgba(15,157,138,0.32)_72%,rgba(18,22,63,0.22)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(105deg,color-mix(in_srgb,var(--color-indigo-deep)_88%,transparent)_0%,color-mix(in_srgb,var(--color-indigo-deep)_72%,transparent)_48%,color-mix(in_srgb,var(--color-teal)_28%,transparent)_100%)]"
           aria-hidden
         />
 
-        <div className="relative mx-auto flex h-full max-w-6xl items-center px-4 py-14 sm:px-6 sm:py-20">
-          <div className="reveal max-w-2xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-teal-soft">
-              {hero.eyebrow}
-            </p>
-            <h1 className="font-sans text-4xl font-extrabold tracking-tight leading-[1.05] text-white sm:text-5xl lg:text-[3.4rem]">
+        <div className="container-site relative flex h-full min-h-[min(68vh,34rem)] items-end py-14 sm:min-h-[min(64vh,36rem)] sm:items-center sm:py-20">
+          <div className="reveal w-full min-w-0 max-w-2xl pb-1">
+            <p className="label mb-5 text-teal-soft/90">{hero.eyebrow}</p>
+            <h1 className="max-w-full font-sans text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
               {hero.h1}
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-              {hero.subtitle}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#contacts" className="btn-primary">
+            <p className="lead mt-6 max-w-full text-white/90">{hero.subtitle}</p>
+            <div className="mt-10 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href="#contacts" className="btn-primary w-full sm:w-auto">
                 {hero.cta}
               </a>
-              <a
-                href="#pricing"
-                className="inline-flex items-center justify-center rounded-xl border border-white/40 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-              >
+              <a href="#pricing" className="btn-ghost-light w-full sm:w-auto">
                 {hero.secondary}
               </a>
             </div>

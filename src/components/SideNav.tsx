@@ -24,7 +24,9 @@ export function SideNav({ open, onClose }: SideNavProps) {
 
   return (
     <div
-      className={`fixed inset-0 z-[70] transition ${open ? "pointer-events-auto" : "pointer-events-none"}`}
+      className={`fixed inset-0 z-[400] overflow-hidden transition ${
+        open ? "pointer-events-auto visible" : "pointer-events-none invisible"
+      }`}
       aria-hidden={!open}
     >
       <button
@@ -35,7 +37,7 @@ export function SideNav({ open, onClose }: SideNavProps) {
       />
 
       <aside
-        className={`absolute right-0 top-0 flex h-full w-[min(100vw,22rem)] flex-col bg-white shadow-2xl transition-transform duration-300 ease-out ${
+        className={`absolute right-0 top-0 flex h-full w-full max-w-[22rem] flex-col bg-white shadow-2xl transition-transform duration-220 ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
         role="dialog"

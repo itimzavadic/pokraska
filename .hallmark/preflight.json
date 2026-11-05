@@ -1,0 +1,9 @@
+{
+  "route": "/",
+  "files": ["src/app/page.tsx", "src/app/globals.css", "src/components/**"],
+  "preserved": ["teal/indigo palette", "Manrope + Source Serif 4", "content.ts verbatim", "forms/links/ids"],
+  "introduced": ["tokens.css", "base.css", "open section spacing", "unbundled contacts/footer"],
+  "genre": "modern-minimal",
+  "depth": "full",
+  "theme": "brand"
+}

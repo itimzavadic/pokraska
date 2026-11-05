@@ -4,21 +4,19 @@ import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 export function Lead() {
   return (
     <section id="lead" className="section-pad bg-teal text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
-        <div>
+      <div className="container-site grid gap-14 lg:grid-cols-2 lg:items-start lg:gap-20">
+        <div className="min-w-0">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
             {leadForm.title}
           </h2>
-          <p className="mt-3 max-w-md text-white/90 sm:text-lg">
-            {leadForm.subtitle}
-          </p>
-          <ul className="mt-6 space-y-2.5 text-lg text-white/95 sm:text-xl">
+          <p className="lead mt-5 text-white/90">{leadForm.subtitle}</p>
+          <ul className="mt-10 space-y-4 text-lg text-white/95">
             <li>— Для юридических лиц</li>
             <li>— Короткие сроки работ</li>
             <li>— Выезд по Витебской области</li>
           </ul>
         </div>
-        <div className="border border-white/25 bg-white/10 p-6 sm:p-8">
+        <div className="border border-white/20 bg-white/10 p-7 sm:p-10">
           <LeadCaptureForm variant="teal" submitLabel={leadForm.button} />
         </div>
       </div>

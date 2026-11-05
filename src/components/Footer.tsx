@@ -5,18 +5,18 @@ import { SocialIcons } from "./SocialIcons";
 export function Footer() {
   return (
     <footer className="bg-indigo text-teal-soft">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-16">
-        <div>
+      <div className="container-site grid gap-16 py-16 lg:grid-cols-2 lg:gap-20">
+        <div className="min-w-0">
           <p className="font-display text-2xl font-semibold text-teal-soft sm:text-3xl">
             {site.companyName}
           </p>
-          <p className="mt-2 max-w-md text-white/85">
+          <p className="mt-4 max-w-md text-white/85">
             {site.tagline} ·{" "}
             <span className="text-teal-soft">{site.city}</span> и {site.region}.{" "}
             {site.responseTime}
           </p>
 
-          <div className="mt-6 space-y-2 text-sm text-white">
+          <div className="mt-8 space-y-3 text-sm text-white">
             <p>
               <a href={`tel:${site.phoneTel}`} className="hover:text-teal-soft">
                 {site.phone}
@@ -30,24 +30,24 @@ export function Footer() {
             <p>{site.address}</p>
           </div>
 
-          <div className="mt-10 rounded-xl border border-teal/40 bg-indigo-deep/50 p-5">
-            <p className="font-display text-xl font-semibold text-teal-soft sm:text-2xl">
+          <div className="mt-12">
+            <p className="font-display text-xl font-semibold text-teal-soft">
               Каналы связи
             </p>
-            <p className="mt-2 text-sm text-white/75">
+            <p className="mt-3 text-sm text-white/70">
               Напишите или позвоните — ответим в рабочее время
             </p>
-            <div className="mt-4">
+            <div className="mt-5">
               <SocialIcons />
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-white/15 bg-indigo-deep/40 p-6 sm:p-8">
+        <div className="min-w-0 border border-white/15 p-7 sm:p-9">
           <h2 className="font-display text-xl font-semibold text-teal-soft sm:text-2xl">
             Заказать звонок
           </h2>
-          <p className="mt-2 mb-5 text-sm text-white/80">
+          <p className="mt-3 mb-7 text-sm text-white/80">
             Оставьте имя и телефон — перезвоним в рабочее время.
           </p>
           <LeadCaptureForm
@@ -59,7 +59,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div className="container-site flex flex-col gap-2 py-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © 2026 {site.companyName}. {site.city}, {site.region}.
           </p>

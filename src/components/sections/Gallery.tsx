@@ -2,23 +2,27 @@ import { gallery } from "@/lib/content";
 
 export function Gallery() {
   return (
-    <section id="gallery" className="section-pad section-rule bg-paper-2">
-      <div className="container-site">
+    <section id="gallery" className="section-pad bg-muted">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <h2 className="font-display text-section text-ink">{gallery.title}</h2>
-          <p className="lead mt-4 text-ink-2">{gallery.subtitle}</p>
+          <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
+            {gallery.title}
+          </h2>
+          <p className="mt-3 text-indigo/70 sm:text-lg">{gallery.subtitle}</p>
         </div>
 
-        <div className="mt-12 columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-4">
+        <div className="mt-10 columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-4">
           {gallery.items.map((item) => (
             <div
               key={item.label}
-              className={`photo-frame mb-3 break-inside-avoid sm:mb-4 ${
+              className={`mb-3 break-inside-avoid bg-indigo/15 sm:mb-4 ${
                 item.tall ? "aspect-[3/4]" : "aspect-[4/3]"
               }`}
             >
-              <div className="flex h-full items-end bg-[linear-gradient(160deg,var(--color-paper-3),var(--color-ink))] p-3">
-                <span className="label text-plate-ink/80">[{item.label}]</span>
+              <div className="flex h-full items-end bg-[linear-gradient(160deg,#0f9d8a33,#1a1f5c44)] p-3">
+                <span className="text-sm font-semibold text-indigo/70">
+                  [{item.label}]
+                </span>
               </div>
             </div>
           ))}

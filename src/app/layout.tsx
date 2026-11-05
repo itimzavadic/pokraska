@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
+import { Manrope, Source_Serif_4 } from "next/font/google";
 import { site } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 import { AgentationDev } from "@/components/AgentationDev";
 import "./globals.css";
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+});
 
 const title = `${site.tagline} в ${site.city} | ${site.companyName}`;
 const description = `${site.tagline} в ${site.city} и ${site.region}. Красим стены, потолки и конструкции складов, птичников и ангаров. Для юридических лиц. Короткие сроки. Звоните ${site.phone}.`;
@@ -57,8 +70,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="h-full antialiased">
-      <body className="min-h-full bg-paper font-body text-ink">
+    <html
+      lang="ru"
+      className={`${manrope.variable} ${sourceSerif.variable} h-full antialiased`}
+    >
+      <body className="min-h-full bg-white text-indigo">
         <JsonLd />
         {children}
         <AgentationDev />

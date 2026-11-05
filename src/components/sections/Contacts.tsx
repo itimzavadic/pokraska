@@ -4,61 +4,63 @@ import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 
 export function Contacts() {
   return (
-    <section id="contacts" className="relative overflow-hidden bg-ink">
-      <div className="relative">
+    <section id="contacts" className="relative overflow-hidden bg-indigo-deep">
+      <div className="relative min-h-[clamp(28rem,55vw,36rem)]">
         <Image
           src="/images/bg/hero-paint.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="photo-bw object-cover object-center opacity-40"
+          className="object-cover object-center"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-[linear-gradient(115deg,color-mix(in_oklab,var(--color-ink)_92%,transparent)_0%,color-mix(in_oklab,var(--color-ink)_75%,transparent)_55%,color-mix(in_oklab,var(--color-ink)_55%,transparent)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(120deg,rgba(18,22,63,0.72)_0%,rgba(18,22,63,0.58)_48%,rgba(15,157,138,0.45)_100%)]"
           aria-hidden
         />
 
-        <div className="container-site relative py-14 sm:py-16">
-          <div className="plate overflow-hidden">
+        <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
+          <div className="overflow-hidden border border-white/25 bg-white/55 backdrop-blur-md">
             <div className="grid gap-10 p-6 sm:p-10 lg:grid-cols-2">
               <div>
-                <h2 className="font-display text-section text-ink">
+                <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
                   {contacts.title}
                 </h2>
-                <p className="lead mt-4 text-ink-2">{contacts.subtitle}</p>
+                <p className="mt-3 text-indigo/80 sm:text-lg">{contacts.subtitle}</p>
 
-                <dl className="mt-8 space-y-5 text-sm sm:text-base">
+                <dl className="mt-8 space-y-4 text-sm sm:text-base">
                   <div>
-                    <dt className="label">Телефон</dt>
-                    <dd className="mt-1">
+                    <dt className="font-semibold text-teal-hot">
+                      Телефон (свяжитесь с нами)
+                    </dt>
+                    <dd>
                       <a
                         href={`tel:${site.phoneTel}`}
-                        className="font-outlier text-lg text-ink underline decoration-1 underline-offset-4 hover:text-accent"
+                        className="text-indigo hover:underline"
                       >
                         {site.phone}
                       </a>
                     </dd>
                   </div>
                   <div>
-                    <dt className="label">Email</dt>
-                    <dd className="mt-1">
+                    <dt className="font-semibold text-teal-hot">Email</dt>
+                    <dd>
                       <a
                         href={`mailto:${site.email}`}
-                        className="text-ink underline decoration-1 underline-offset-4 hover:text-accent"
+                        className="text-indigo hover:underline"
                       >
                         {site.email}
                       </a>
                     </dd>
                   </div>
                   <div>
-                    <dt className="label">Адрес</dt>
-                    <dd className="mt-1 text-ink">{site.address}</dd>
+                    <dt className="font-semibold text-teal-hot">Адрес</dt>
+                    <dd className="text-indigo">{site.address}</dd>
                   </div>
                   <div>
-                    <dt className="label">Регион</dt>
-                    <dd className="mt-1 text-ink">
-                      <span className="text-accent">{site.city}</span>
+                    <dt className="font-semibold text-teal-hot">Регион</dt>
+                    <dd className="text-indigo">
+                      <span className="font-semibold text-teal-hot">{site.city}</span>
                       {" и "}
                       {site.region}
                     </dd>
@@ -73,15 +75,15 @@ export function Contacts() {
                 </a>
               </div>
 
-              <div className="border-[3px] border-ink bg-paper p-6 sm:p-8">
-                <h3 className="font-display text-title text-ink">
+              <div className="border border-white/30 bg-teal/75 p-6 text-white backdrop-blur-sm sm:p-8">
+                <h3 className="font-display text-xl font-semibold sm:text-2xl">
                   Финальная заявка
                 </h3>
-                <p className="mt-2 mb-5 text-sm text-ink-2">
+                <p className="mt-2 mb-5 text-sm text-white/90">
                   Напишите об объекте организации — вернёмся с расчётом сроков и
                   стоимости.
                 </p>
-                <LeadCaptureForm variant="plate" submitLabel="Отправить" />
+                <LeadCaptureForm variant="teal" submitLabel="Отправить" />
               </div>
             </div>
           </div>

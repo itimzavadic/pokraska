@@ -3,21 +3,23 @@ import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 
 export function Lead() {
   return (
-    <section id="lead" className="section-pad band-ink">
-      <div className="container-site grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+    <section id="lead" className="section-pad bg-teal text-white">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
         <div>
-          <h2 className="font-display text-section text-plate-ink">
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">
             {leadForm.title}
           </h2>
-          <p className="lead mt-4 text-plate-ink/85">{leadForm.subtitle}</p>
-          <ul className="mt-8 space-y-3 text-lg text-plate-ink/90">
+          <p className="mt-3 max-w-md text-white/90 sm:text-lg">
+            {leadForm.subtitle}
+          </p>
+          <ul className="mt-6 space-y-2.5 text-lg text-white/95 sm:text-xl">
             <li>— Для юридических лиц</li>
             <li>— Короткие сроки работ</li>
             <li>— Выезд по Витебской области</li>
           </ul>
         </div>
-        <div className="plate p-6 sm:p-8">
-          <LeadCaptureForm variant="plate" submitLabel={leadForm.button} />
+        <div className="border border-white/25 bg-white/10 p-6 sm:p-8">
+          <LeadCaptureForm variant="teal" submitLabel={leadForm.button} />
         </div>
       </div>
     </section>

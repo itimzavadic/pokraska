@@ -1,7 +1,7 @@
 import { site } from "@/lib/content";
 
 const iconClass =
-  "flex h-11 w-11 items-center justify-center border-2 border-ink bg-plate text-ink transition hover:border-accent hover:bg-accent";
+  "flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-teal hover:bg-teal hover:text-white";
 
 export function SocialIcons() {
   return (

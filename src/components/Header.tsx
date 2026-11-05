@@ -9,16 +9,16 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-[300] border-b-[3px] border-ink bg-paper/95">
-        <div className="container-site flex items-center justify-between gap-4 py-4 sm:py-5">
-          <a href="#hero" className="group min-w-0">
+      <header className="sticky top-0 z-[300] max-w-full overflow-x-clip border-b-[3px] border-ink bg-paper/95">
+        <div className="container-site flex max-w-full items-center justify-between gap-3 py-4 sm:gap-4 sm:py-5">
+          <a href="#hero" className="group min-w-0 flex-1 overflow-hidden pr-2">
             <p className="font-display truncate text-xl text-ink sm:text-2xl">
               {site.companyName}
             </p>
             <p className="label mt-0.5 truncate text-ink-2">{site.tagline}</p>
           </a>
 
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex shrink-0 items-center gap-3 sm:gap-4">
             <a
               href={`tel:${site.phoneTel}`}
               className="hidden font-outlier text-sm text-ink underline decoration-1 underline-offset-4 hover:text-accent md:inline"

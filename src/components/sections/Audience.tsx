@@ -3,29 +3,24 @@ import { audience, site } from "@/lib/content";
 
 export function Audience() {
   return (
-    <section id="audience" className="section-pad bg-teal text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-12">
+    <section id="audience" className="section-pad section-rule bg-paper">
+      <div className="container-site flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
         <div className="min-w-0 flex-1">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
-            Для юридических лиц · <span className="text-white">{site.city}</span>
+          <p className="label mb-3">
+            Для юридических лиц · {site.city}
           </p>
-          <h2 className="max-w-xl font-sans text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            {audience.title}
-          </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-            {audience.subtitle}
-          </p>
+          <h2 className="font-display text-section text-ink">{audience.title}</h2>
+          <p className="lead mt-5 text-ink-2">{audience.subtitle}</p>
 
-          <p className="mt-8 font-sans text-sm font-bold uppercase tracking-[0.14em] text-white">
-            {audience.lead}
-          </p>
-          <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+          <p className="mt-10 font-display text-title text-ink">{audience.lead}</p>
+          <ul className="mt-6 grid gap-6 sm:grid-cols-2">
             {audience.items.map((item) => (
-              <li key={item.title} className="border-l-2 border-white/50 pl-4">
-                <h3 className="font-sans text-lg font-bold tracking-tight text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-sm leading-relaxed text-white/85">
+              <li
+                key={item.title}
+                className="border-l-[3px] border-ink pl-4"
+              >
+                <h3 className="font-display text-lg text-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-2">
                   {item.text}
                 </p>
               </li>
@@ -33,20 +28,22 @@ export function Audience() {
           </ul>
         </div>
 
-        <div className="mx-auto w-full max-w-[15.5rem] shrink-0 sm:max-w-[17rem] lg:mx-0">
-          <div className="overflow-hidden border border-white/25 bg-white/10 shadow-[0_16px_40px_rgba(18,22,63,0.25)]">
-            <Image
-              src="/images/bg/audience.jpg"
-              alt="Процесс покраски: валик на удлинителе"
-              width={680}
-              height={1020}
-              sizes="272px"
-              className="h-auto w-full object-contain"
-            />
-          </div>
-          <p className="mt-3 text-center text-xs font-medium uppercase tracking-wide text-white/75">
-            Процесс на объекте
-          </p>
+        <div className="mx-auto w-full max-w-[16rem] shrink-0 lg:mx-0">
+          <figure>
+            <div className="photo-frame overflow-hidden">
+              <Image
+                src="/images/bg/audience.jpg"
+                alt="Процесс покраски: валик на удлинителе"
+                width={680}
+                height={1020}
+                sizes="256px"
+                className="photo-bw h-auto w-full"
+              />
+            </div>
+            <figcaption className="label mt-3 text-center">
+              Процесс на объекте
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

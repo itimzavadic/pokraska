@@ -20,7 +20,7 @@ export function Toast({ message, open, onClose }: ToastProps) {
   return (
     <div
       role="status"
-      className="fixed left-1/2 top-6 z-[60] w-[min(92vw,24rem)] -translate-x-1/2 rounded-2xl bg-indigo px-4 py-3 text-center text-sm font-medium text-teal-soft shadow-xl"
+      className="fixed left-1/2 top-6 z-[500] w-[min(92vw,24rem)] -translate-x-1/2 border-[3px] border-ink bg-plate px-4 py-3 text-center font-display text-sm text-ink shadow-card"
     >
       {message}
     </div>

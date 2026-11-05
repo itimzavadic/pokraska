@@ -4,13 +4,13 @@ import { FormEvent, useState } from "react";
 import { Toast } from "./Toast";
 
 type LeadCaptureFormProps = {
-  variant?: "teal" | "indigo";
+  variant?: "plate" | "ink";
   submitLabel?: string;
   compact?: boolean;
 };
 
 export function LeadCaptureForm({
-  variant = "teal",
+  variant = "plate",
   submitLabel = "Отправить заявку",
   compact = false,
 }: LeadCaptureFormProps) {
@@ -44,18 +44,13 @@ export function LeadCaptureForm({
     setToastOpen(true);
   }
 
-  const fieldClass =
-    variant === "teal"
-      ? "w-full rounded-xl border border-white/30 bg-white/15 px-4 py-3 text-white placeholder:text-white/60"
-      : "w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-teal-soft";
-
-  const buttonClass =
-    variant === "teal"
-      ? "w-full rounded-xl bg-white px-4 py-3 font-semibold text-indigo transition hover:bg-muted disabled:opacity-50"
-      : "w-full rounded-xl bg-teal px-4 py-3 font-semibold text-white transition hover:bg-teal-hot disabled:opacity-50";
-
-  const checkLabelClass =
-    variant === "teal" ? "text-white/85" : "text-white/80";
+  const onInk = variant === "ink";
+  const fieldClass = onInk
+    ? "w-full border-2 border-plate-ink/40 bg-ink px-4 py-3 text-plate-ink placeholder:text-plate-ink/50"
+    : "w-full border-2 border-ink bg-paper px-4 py-3 text-ink placeholder:text-muted";
+  const checkLabelClass = onInk ? "text-plate-ink/85" : "text-ink-2";
+  const hintClass = onInk ? "text-plate-ink/60" : "text-muted";
+  const errorClass = onInk ? "text-accent" : "text-accent-deep";
 
   return (
     <>
@@ -100,7 +95,7 @@ export function LeadCaptureForm({
             type="checkbox"
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
-            className="mt-1 h-4 w-4 shrink-0 accent-teal"
+            className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-accent)]"
             required
           />
           <span>
@@ -108,16 +103,14 @@ export function LeadCaptureForm({
           </span>
         </label>
         {error && (
-          <p className="text-sm font-medium text-white/95" role="alert">
+          <p className={`text-sm font-medium ${errorClass}`} role="alert">
             {error}
           </p>
         )}
-        <button type="submit" className={buttonClass} disabled={!consent}>
+        <button type="submit" className="btn-primary w-full" disabled={!consent}>
           {submitLabel}
         </button>
-        <p
-          className={`text-xs ${variant === "teal" ? "text-white/75" : "text-white/70"}`}
-        >
+        <p className={`text-xs ${hintClass}`}>
           Демо-форма: заявка не отправляется на сервер.
         </p>
       </form>

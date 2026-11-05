@@ -24,7 +24,9 @@ export function SideNav({ open, onClose }: SideNavProps) {
 
   return (
     <div
-      className={`fixed inset-0 z-[400] overflow-hidden transition ${open ? "pointer-events-auto" : "pointer-events-none"}`}
+      className={`fixed inset-0 z-[400] overflow-hidden transition ${
+        open ? "pointer-events-auto visible" : "pointer-events-none invisible"
+      }`}
       aria-hidden={!open}
     >
       <button

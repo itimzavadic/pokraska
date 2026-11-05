@@ -4,8 +4,8 @@ import { audience, site } from "@/lib/content";
 export function Audience() {
   return (
     <section id="audience" className="section-pad section-rule bg-paper">
-      <div className="container-site flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
-        <div className="min-w-0 flex-1">
+      <div className="container-site flex min-w-0 flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+        <div className="w-full min-w-0 flex-1">
           <p className="label mb-3">
             Для юридических лиц · {site.city}
           </p>

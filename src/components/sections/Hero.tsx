@@ -19,17 +19,17 @@ export function Hero() {
         />
 
         <div className="container-site relative flex h-full min-h-[min(72vh,36rem)] items-end py-12 sm:min-h-[min(70vh,38rem)] sm:items-center sm:py-16">
-          <div className="max-w-2xl pb-2">
+          <div className="w-full min-w-0 max-w-2xl pb-2">
             <p className="label mb-4 text-plate-ink/80">{hero.eyebrow}</p>
-            <h1 className="font-display text-display text-plate-ink">
+            <h1 className="font-display max-w-full text-display text-plate-ink">
               {hero.h1}
             </h1>
-            <p className="lead mt-5 text-plate-ink/90">{hero.subtitle}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a href="#contacts" className="btn-primary">
+            <p className="lead mt-5 max-w-full text-plate-ink/90">{hero.subtitle}</p>
+            <div className="mt-8 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href="#contacts" className="btn-primary w-full sm:w-auto">
                 {hero.cta}
               </a>
-              <a href="#pricing" className="btn-secondary bg-paper">
+              <a href="#pricing" className="btn-secondary w-full bg-paper sm:w-auto">
                 {hero.secondary}
               </a>
             </div>

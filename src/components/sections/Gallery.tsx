@@ -1,28 +1,40 @@
+import Image from "next/image";
 import { gallery } from "@/lib/content";
 
 export function Gallery() {
   return (
-    <section id="gallery" className="section-pad bg-muted">
+    <section id="gallery" className="section-pad bg-indigo-deep">
       <div className="container-site">
-        <div className="max-w-2xl">
-          <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
+        <div className="max-w-2xl text-white">
+          <h2 className="font-display text-3xl font-semibold text-white sm:text-4xl">
             {gallery.title}
           </h2>
-          <p className="lead mt-5 text-indigo/70">{gallery.subtitle}</p>
+          <p className="lead mt-5 text-white/85">{gallery.subtitle}</p>
         </div>
 
-        <div className="mt-16 columns-2 gap-5 sm:columns-3 sm:gap-6 lg:columns-3">
+        <div className="mt-16 columns-2 gap-5 sm:columns-3 sm:gap-6">
           {gallery.items.map((item) => (
-            <div
-              key={item.label}
-              className={`mb-5 break-inside-avoid bg-indigo/10 sm:mb-6 ${
-                item.tall ? "aspect-[3/4]" : "aspect-[4/3]"
-              }`}
+            <figure
+              key={item.src}
+              className="mb-5 break-inside-avoid sm:mb-6"
             >
-              <div className="flex h-full items-end bg-[linear-gradient(160deg,color-mix(in_srgb,var(--color-teal)_20%,transparent),color-mix(in_srgb,var(--color-indigo)_25%,transparent))] p-4">
-                <span className="label text-indigo/70">[{item.label}]</span>
+              <div
+                className={`relative overflow-hidden bg-indigo/20 ${
+                  item.tall ? "aspect-[3/4]" : "aspect-[4/3]"
+                }`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
-            </div>
+              <figcaption className="label mt-3 text-white/75">
+                {item.label}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>

@@ -67,7 +67,7 @@ export function LeadCaptureForm({
               name="name"
               type="text"
               autoComplete="name"
-              placeholder="Контактное лицо"
+              placeholder="Ваше имя"
               className={fieldClass}
               required
             />

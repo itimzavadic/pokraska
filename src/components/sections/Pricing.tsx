@@ -12,8 +12,7 @@ export function Pricing() {
           <p className="lead mt-5 text-indigo/80">
             {pricing.locationLine}{" "}
             <span className="font-semibold text-teal-hot">{site.city}</span> и{" "}
-            {site.region}. Покраска складов, побелка и мойка помещений для
-            юридических лиц.
+            {site.region}. Покраска складов, побелка и мойка помещений.
           </p>
           <p className="mt-4 text-sm text-indigo/55">{pricing.note}</p>
         </div>
@@ -23,7 +22,7 @@ export function Pricing() {
             <li
               key={row.id}
               id={row.id}
-              className="flex scroll-mt-28 flex-col overflow-hidden border border-indigo/10"
+              className="flex scroll-mt-36 flex-col overflow-hidden border border-indigo/10"
             >
               <div className="relative aspect-[16/10]">
                 <Image

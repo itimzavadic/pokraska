@@ -20,8 +20,8 @@ export function Hero() {
 
         <div className="container-site relative flex h-full min-h-[min(68vh,34rem)] items-end py-14 sm:min-h-[min(64vh,36rem)] sm:items-center sm:py-20">
           <div className="reveal w-full min-w-0 max-w-2xl pb-1">
-            <p className="label mb-5 text-teal-soft/90">{hero.eyebrow}</p>
-            <h1 className="max-w-full font-sans text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+            <p className="label mb-5" style={{ color: "#f5f7ff" }}>{hero.eyebrow}</p>
+            <h1 className="max-w-full font-sans text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
               {hero.h1}
             </h1>
             <p className="lead mt-6 max-w-full text-white/90">{hero.subtitle}</p>

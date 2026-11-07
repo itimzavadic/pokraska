@@ -7,7 +7,7 @@ export function Audience() {
       <div className="container-site flex min-w-0 flex-col gap-14 lg:flex-row lg:items-start lg:gap-20">
         <div className="w-full min-w-0 flex-1">
           <p className="label mb-4 text-white/80">
-            Для юридических лиц · {site.city}
+            {site.city} и {site.region}
           </p>
           <h2 className="max-w-xl font-sans text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             {audience.title}
@@ -33,16 +33,13 @@ export function Audience() {
           <div className="overflow-hidden border border-white/20">
             <Image
               src="/images/bg/audience.jpg"
-              alt="Процесс покраски: валик на удлинителе"
-              width={680}
-              height={1020}
+              alt="Побелка и покраска промышленного объекта"
+              width={973}
+              height={1024}
               sizes="224px"
               className="h-auto w-full object-contain"
             />
           </div>
-          <p className="label mt-4 text-center text-white/70">
-            Процесс на объекте
-          </p>
         </div>
       </div>
     </section>

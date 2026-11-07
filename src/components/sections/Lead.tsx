@@ -11,9 +11,9 @@ export function Lead() {
           </h2>
           <p className="lead mt-5 text-white/90">{leadForm.subtitle}</p>
           <ul className="mt-10 space-y-4 text-lg text-white/95">
-            <li>— Для юридических лиц</li>
             <li>— Короткие сроки работ</li>
             <li>— Выезд по Витебской области</li>
+            <li>— Договор и прозрачная смета</li>
           </ul>
         </div>
         <div className="border border-white/20 bg-white/10 p-7 sm:p-10">

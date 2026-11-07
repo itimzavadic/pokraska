@@ -29,14 +29,14 @@ export function Audience() {
           </ul>
         </div>
 
-        <div className="mx-auto w-full max-w-[14rem] shrink-0 lg:mx-0 lg:pt-2">
+        <div className="mx-auto w-full max-w-[20rem] shrink-0 sm:max-w-[24rem] lg:mx-0 lg:max-w-[26rem] lg:pt-2">
           <div className="overflow-hidden border border-white/20">
             <Image
               src="/images/bg/audience.jpg"
               alt="Побелка и покраска промышленного объекта"
               width={973}
               height={1024}
-              sizes="224px"
+              sizes="(max-width: 640px) 20rem, (max-width: 1024px) 24rem, 26rem"
               className="h-auto w-full object-contain"
             />
           </div>

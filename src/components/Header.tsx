@@ -24,7 +24,7 @@ export function Header() {
               className="h-16 w-auto shrink-0 object-contain sm:h-20"
               priority
             />
-            <span className="hidden min-w-0 flex-col font-sans text-lg font-extrabold italic leading-[1.05] tracking-tight text-indigo sm:flex sm:text-2xl">
+            <span className="flex min-w-0 flex-col font-sans text-lg font-extrabold italic leading-[1.05] tracking-tight text-indigo sm:text-2xl">
               <span>моем</span>
               <span>белим</span>
               <span>красим</span>
@@ -37,9 +37,6 @@ export function Header() {
               className="hidden text-sm font-semibold text-indigo hover:text-teal-hot md:inline"
             >
               {site.phone}
-            </a>
-            <a href="#contacts" className="btn-primary hidden text-sm sm:inline-flex">
-              Связаться
             </a>
             <button
               type="button"

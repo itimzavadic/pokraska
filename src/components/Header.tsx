@@ -17,16 +17,16 @@ export function Header() {
             className="group flex min-w-0 flex-1 items-center gap-0 overflow-hidden pr-2"
           >
             <span className="flex min-w-0 flex-col font-sans text-lg font-extrabold italic leading-[1.05] tracking-tight text-indigo sm:text-2xl">
-              <span>красим</span>
-              <span>белим</span>
-              <span>моем</span>
+              <span>Красим</span>
+              <span>Белим</span>
+              <span>Моем</span>
             </span>
             <Image
               src="/images/logo.png"
               alt={site.companyName}
               width={340}
               height={190}
-              className="-ml-3 -translate-y-1 h-[5.25rem] w-auto shrink-0 object-contain sm:-ml-4 sm:-translate-y-1.5 sm:h-24"
+              className="-ml-5 -translate-y-2 h-[5.25rem] w-auto shrink-0 object-contain sm:-ml-6 sm:-translate-y-2.5 sm:h-24"
               priority
             />
           </a>

@@ -17,13 +17,15 @@ export function LeadCaptureForm({
   const [toastOpen, setToastOpen] = useState(false);
   const [error, setError] = useState("");
   const [consent, setConsent] = useState(false);
+  const [pending, setPending] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
     const phone = String(data.get("phone") || "").trim();
+    const message = String(data.get("message") || "").trim();
 
     if (name.length < 2) {
       setError("Укажите имя");
@@ -39,9 +41,32 @@ export function LeadCaptureForm({
     }
 
     setError("");
-    form.reset();
-    setConsent(false);
-    setToastOpen(true);
+    setPending(true);
+
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, message }),
+      });
+      const result = (await response.json()) as {
+        ok?: boolean;
+        error?: string;
+      };
+
+      if (!response.ok || !result.ok) {
+        setError(result.error || "Не удалось отправить заявку");
+        return;
+      }
+
+      form.reset();
+      setConsent(false);
+      setToastOpen(true);
+    } catch {
+      setError("Не удалось отправить заявку. Проверьте соединение.");
+    } finally {
+      setPending(false);
+    }
   }
 
   const fieldClass =
@@ -70,6 +95,7 @@ export function LeadCaptureForm({
               placeholder="Ваше имя"
               className={fieldClass}
               required
+              disabled={pending}
             />
           </label>
           <label className="block">
@@ -81,6 +107,7 @@ export function LeadCaptureForm({
               placeholder="+375 (__) ___-__-__"
               className={fieldClass}
               required
+              disabled={pending}
             />
           </label>
         </div>
@@ -92,6 +119,7 @@ export function LeadCaptureForm({
               rows={3}
               placeholder="Организация, тип объекта, площадь, сроки"
               className={`${fieldClass} resize-y`}
+              disabled={pending}
             />
           </label>
         )}
@@ -102,6 +130,7 @@ export function LeadCaptureForm({
             onChange={(e) => setConsent(e.target.checked)}
             className="mt-1 h-4 w-4 shrink-0 accent-teal"
             required
+            disabled={pending}
           />
           <span>
             Согласен(на) на обработку персональных данных для связи по заявке
@@ -112,18 +141,17 @@ export function LeadCaptureForm({
             {error}
           </p>
         )}
-        <button type="submit" className={buttonClass} disabled={!consent}>
-          {submitLabel}
-        </button>
-        <p
-          className={`text-xs ${variant === "teal" ? "text-white/75" : "text-white/70"}`}
+        <button
+          type="submit"
+          className={buttonClass}
+          disabled={!consent || pending}
         >
-          Демо-форма: заявка не отправляется на сервер.
-        </p>
+          {pending ? "Отправка…" : submitLabel}
+        </button>
       </form>
       <Toast
         open={toastOpen}
-        message="Заявка принята (демо)"
+        message="Заявка отправлена. Мы свяжемся с вами."
         onClose={() => setToastOpen(false)}
       />
     </>

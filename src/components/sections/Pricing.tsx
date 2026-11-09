@@ -42,6 +42,9 @@ export function Pricing() {
                     {row.price}
                   </p>
                 </div>
+                <p className="mt-3 text-sm font-medium text-indigo/70">
+                  {pricing.minOrder}
+                </p>
                 <p className="mt-4 text-sm leading-relaxed text-indigo/75">
                   {row.description}
                 </p>

@@ -14,7 +14,7 @@ export function Header() {
         <div className="container-site flex max-w-full items-center justify-between gap-3 py-4 sm:py-5">
           <a
             href="#hero"
-            className="group flex min-w-0 flex-1 items-center gap-0.5 overflow-hidden pr-2 sm:gap-1"
+            className="group flex min-w-0 flex-1 items-center gap-0 overflow-hidden pr-2"
           >
             <span className="flex min-w-0 flex-col font-sans text-lg font-extrabold italic leading-[1.05] tracking-tight text-indigo sm:text-2xl">
               <span>красим</span>
@@ -24,9 +24,9 @@ export function Header() {
             <Image
               src="/images/logo.png"
               alt={site.companyName}
-              width={320}
-              height={178}
-              className="h-20 w-auto shrink-0 object-contain sm:h-24"
+              width={360}
+              height={200}
+              className="-ml-1 h-24 w-auto shrink-0 object-contain sm:-ml-1.5 sm:h-28"
               priority
             />
           </a>

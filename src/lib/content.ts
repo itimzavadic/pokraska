@@ -41,8 +41,8 @@ export const site = {
 } as const;
 
 export const servicesNav = [
-  { id: "service-paint", label: "Покраска помещений", href: "#service-paint" },
   { id: "service-whitewash", label: "Побелка помещений", href: "#service-whitewash" },
+  { id: "service-paint", label: "Покраска помещений", href: "#service-paint" },
   { id: "service-wash", label: "Мойка помещений", href: "#service-wash" },
   { id: "service-roof", label: "Мойка крыш", href: "#service-roof" },
 ] as const;
@@ -187,20 +187,20 @@ export const pricing = {
   minOrder: "Минимальный заказ от 1000 BYN",
   items: [
     {
-      id: "service-paint",
-      service: "Покраска помещений",
-      description:
-        "Покраска стен, потолков и конструкций на объектах: склады, ангары, птичники и сопутствующие помещения.",
-      price: "от 3 BYN / м²",
-      image: "/images/bg/service-2.jpg",
-    },
-    {
       id: "service-whitewash",
       service: "Побелка помещений",
       description:
         "Побелка птичников, складов, ангаров и аграрных хранилищ. Подготовка поверхностей и нанесение состава под санитарные требования объекта.",
       price: "от 3 BYN / м²",
       image: "/images/bg/service-1.jpg",
+    },
+    {
+      id: "service-paint",
+      service: "Покраска помещений",
+      description:
+        "Покраска стен, потолков и конструкций на объектах: склады, ангары, птичники и сопутствующие помещения.",
+      price: "от 3 BYN / м²",
+      image: "/images/bg/service-2.jpg",
     },
     {
       id: "service-wash",

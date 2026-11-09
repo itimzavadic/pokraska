@@ -16,6 +16,8 @@ export function Footer() {
           </p>
 
           <div className="mt-8 space-y-3 text-sm text-white">
+            <p>{site.ownerName}</p>
+            <p className="text-white/70">{site.legalStatus}</p>
             <p>
               <a href={`tel:${site.phoneTel}`} className="hover:text-teal-soft">
                 {site.phone}
@@ -26,7 +28,7 @@ export function Footer() {
                 {site.email}
               </a>
             </p>
-            <p>{site.address}</p>
+            <p>{site.addressFull}</p>
           </div>
         </div>
 
@@ -46,9 +48,10 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col gap-2 py-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © 2026 {site.companyName}. {site.city}, {site.region}.
+            © 2026 {site.ownerName}. {site.companyName}. {site.city},{" "}
+            {site.region}.
           </p>
-          <p>УНП / юр. данные — [уточнить у заказчика]</p>
+          <p>{site.legalStatus}</p>
         </div>
       </div>
     </footer>

@@ -14,7 +14,12 @@ export function JsonLd() {
       streetAddress: site.address,
       addressLocality: site.city,
       addressRegion: site.region,
+      postalCode: site.postalCode,
       addressCountry: "BY",
+    },
+    founder: {
+      "@type": "Person",
+      name: site.ownerName,
     },
     areaServed: [
       {

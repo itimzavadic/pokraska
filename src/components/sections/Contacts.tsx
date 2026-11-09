@@ -29,7 +29,16 @@ export function Contacts() {
 
               <dl className="mt-10 space-y-6 text-sm sm:text-base">
                 <div>
-                  <dt className="label text-teal-hot">Телефон</dt>
+                  <dt className="label text-teal-hot">Исполнитель</dt>
+                  <dd className="mt-1.5 font-semibold text-indigo">
+                    {site.ownerName}
+                  </dd>
+                  <dd className="mt-1 text-sm text-indigo/70">
+                    {site.legalStatus}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="label text-teal-hot">Телефон / Viber / Telegram</dt>
                   <dd className="mt-1.5">
                     <a
                       href={`tel:${site.phoneTel}`}
@@ -52,10 +61,10 @@ export function Contacts() {
                 </div>
                 <div>
                   <dt className="label text-teal-hot">Адрес</dt>
-                  <dd className="mt-1.5 text-indigo">{site.address}</dd>
+                  <dd className="mt-1.5 text-indigo">{site.addressFull}</dd>
                 </div>
                 <div>
-                  <dt className="label text-teal-hot">Регион</dt>
+                  <dt className="label text-teal-hot">Регион работ</dt>
                   <dd className="mt-1.5 text-indigo">
                     <span className="font-semibold text-teal-hot">{site.city}</span>
                     {" и "}

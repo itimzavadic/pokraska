@@ -33,9 +33,6 @@ export function Contacts() {
                   <dd className="mt-1.5 font-semibold text-indigo">
                     {site.ownerName}
                   </dd>
-                  <dd className="mt-1 text-sm text-indigo/70">
-                    {site.legalStatus}
-                  </dd>
                 </div>
                 <div>
                   <dt className="label text-teal-hot">Телефон / Viber / Telegram</dt>

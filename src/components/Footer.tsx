@@ -17,7 +17,6 @@ export function Footer() {
 
           <div className="mt-8 space-y-3 text-sm text-white">
             <p>{site.ownerName}</p>
-            <p className="text-white/70">{site.legalStatus}</p>
             <p>
               <a href={`tel:${site.phoneTel}`} className="hover:text-teal-soft">
                 {site.phone}
@@ -51,7 +50,6 @@ export function Footer() {
             © 2026 {site.ownerName}. {site.companyName}. {site.city},{" "}
             {site.region}.
           </p>
-          <p>{site.legalStatus}</p>
         </div>
       </div>
     </footer>

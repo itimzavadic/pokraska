@@ -26,7 +26,7 @@ export function Header() {
               alt={site.companyName}
               width={340}
               height={190}
-              className="-ml-3 h-[5.25rem] w-auto shrink-0 object-contain sm:-ml-4 sm:h-24"
+              className="-ml-3 -translate-y-1 h-[5.25rem] w-auto shrink-0 object-contain sm:-ml-4 sm:-translate-y-1.5 sm:h-24"
               priority
             />
           </a>

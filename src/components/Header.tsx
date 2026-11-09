@@ -17,9 +17,9 @@ export function Header() {
             className="group flex min-w-0 flex-1 items-center gap-1.5 overflow-hidden pr-2 sm:gap-2"
           >
             <span className="flex min-w-0 flex-col font-sans text-lg font-extrabold italic leading-[1.05] tracking-tight text-indigo sm:text-2xl">
-              <span>моем</span>
-              <span>белим</span>
               <span>красим</span>
+              <span>белим</span>
+              <span>моем</span>
             </span>
             <Image
               src="/images/logo.png"

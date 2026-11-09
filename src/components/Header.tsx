@@ -24,9 +24,9 @@ export function Header() {
             <Image
               src="/images/logo.png"
               alt={site.companyName}
-              width={360}
-              height={200}
-              className="-ml-1 h-24 w-auto shrink-0 object-contain sm:-ml-1.5 sm:h-28"
+              width={340}
+              height={190}
+              className="-ml-3 h-[5.25rem] w-auto shrink-0 object-contain sm:-ml-4 sm:h-24"
               priority
             />
           </a>

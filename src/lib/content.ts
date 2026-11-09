@@ -158,7 +158,7 @@ export const scenario = {
 };
 
 export const advantages = {
-  title: `Почему выбирают ${site.companyName}`,
+  title: `Почему выбирают «${site.companyName}»`,
   subtitle: "Фокус на производственных объектах и сроках",
   items: [
     {

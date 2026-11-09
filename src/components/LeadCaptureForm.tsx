@@ -104,6 +104,7 @@ export function LeadCaptureForm({
               name="phone"
               type="tel"
               autoComplete="tel"
+              defaultValue="+375"
               placeholder="+375 (__) ___-__-__"
               className={fieldClass}
               required

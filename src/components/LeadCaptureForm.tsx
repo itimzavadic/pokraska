@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { site } from "@/lib/content";
 import { Toast } from "./Toast";
 
 type LeadCaptureFormProps = {
@@ -44,18 +45,24 @@ export function LeadCaptureForm({
     setPending(true);
 
     try {
-      const response = await fetch("/api/lead", {
+      const response = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, message }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          message: message || "—",
+          _subject: `Заявка с сайта «${site.companyName}»`,
+          _template: "table",
+          _captcha: "false",
+        }),
       });
-      const result = (await response.json()) as {
-        ok?: boolean;
-        error?: string;
-      };
 
-      if (!response.ok || !result.ok) {
-        setError(result.error || "Не удалось отправить заявку");
+      if (!response.ok) {
+        setError("Не удалось отправить заявку");
         return;
       }
 

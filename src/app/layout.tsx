@@ -17,7 +17,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 const title = `${site.tagline} в ${site.city} | ${site.companyName}`;
-const description = `${site.tagline} в ${site.city} и ${site.region}. Красим стены, потолки и конструкции складов, птичников и ангаров. Короткие сроки. Звоните ${site.phone}.`;
+const description = `Побелка и покраска производственных помещений в Витебск и Витебская область. Красим стены, потолки и конструкции. Птичники, коровники, свинарники, склады, ангары и др. Короткие сроки. Звоните ${site.phone}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),

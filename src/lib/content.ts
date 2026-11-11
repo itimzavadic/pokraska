@@ -23,7 +23,7 @@ export const site = {
   yearsOnMarket: "[N]",
   objectsCompleted: "[N+]",
   guarantee: "[N] лет гарантии на работы",
-  domain: "https://pokraska-iota.vercel.app",
+  domain: "https://moem-belim-krasim.by",
   social: {
     viber: "viber://chat?number=%2B375298888049",
     telegram: "https://t.me/+375298888049",

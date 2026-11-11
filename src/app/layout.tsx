@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Manrope, Source_Serif_4 } from "next/font/google";
 import { site } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 import "./globals.css";
+
+const GTM_ID = "GTM-MRZKL2GW";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -73,7 +76,29 @@ export default function RootLayout({
       lang="ru"
       className={`${manrope.variable} ${sourceSerif.variable} h-full antialiased`}
     >
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          `}
+        </Script>
+      </head>
       <body className="min-h-full bg-white text-indigo">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height={0}
+            width={0}
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <JsonLd />
         {children}
       </body>

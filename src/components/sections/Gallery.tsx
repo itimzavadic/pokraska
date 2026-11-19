@@ -34,9 +34,6 @@ export function Gallery() {
                       className="object-cover"
                     />
                   </div>
-                  <figcaption className="label mt-3 text-white/75">
-                    {item.label}
-                  </figcaption>
                 </figure>
               </li>
             ))}
@@ -62,9 +59,6 @@ export function Gallery() {
                   className="object-cover"
                 />
               </div>
-              <figcaption className="label mt-3 text-white/75">
-                {item.label}
-              </figcaption>
             </figure>
           ))}
         </div>

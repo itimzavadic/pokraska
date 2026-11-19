@@ -8,7 +8,6 @@ import { Scenario } from "@/components/sections/Scenario";
 import { Advantages } from "@/components/sections/Advantages";
 import { Pricing } from "@/components/sections/Pricing";
 import { Gallery } from "@/components/sections/Gallery";
-import { FAQ } from "@/components/sections/FAQ";
 import { Contacts } from "@/components/sections/Contacts";
 
 export default function HomePage() {
@@ -24,7 +23,6 @@ export default function HomePage() {
         <Advantages />
         <Pricing />
         <Gallery />
-        <FAQ />
         <Contacts />
       </main>
       <Footer />

@@ -1,4 +1,4 @@
-import { audience, faq, pricing, site } from "@/lib/content";
+import { audience, pricing, site } from "@/lib/content";
 
 export function JsonLd() {
   const serviceName = "Побелка производственных помещений";
@@ -119,20 +119,7 @@ export function JsonLd() {
     })),
   };
 
-  const faqPage = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.items.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
-    })),
-  };
-
-  const payloads = [localBusiness, service, webPage, objectList, faqPage];
+  const payloads = [localBusiness, service, webPage, objectList];
 
   return (
     <>

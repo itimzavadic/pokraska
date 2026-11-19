@@ -42,9 +42,6 @@ export function Gallery() {
             ))}
           </ul>
         </div>
-        <p className="container-site mt-3 text-xs text-white/55">
-          Листайте в сторону — все {gallery.items.length} фото
-        </p>
       </div>
 
       {/* Tablet/desktop grid */}

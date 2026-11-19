@@ -16,8 +16,40 @@ export function Gallery() {
             {gallery.ctaLabel}
           </a>
         </div>
+      </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      {/* Mobile: horizontal snap gallery with all photos */}
+      <div className="mt-10 sm:hidden">
+        <div className="-mx-0 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <ul className="flex w-max gap-3 px-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))] snap-x snap-mandatory">
+            {gallery.items.map((item) => (
+              <li key={item.src} className="w-[78vw] max-w-[20rem] shrink-0 snap-center">
+                <figure className="min-w-0">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-indigo/20">
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      sizes="78vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="label mt-3 text-white/75">
+                    {item.label}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <p className="container-site mt-3 text-xs text-white/55">
+          Листайте в сторону — все {gallery.items.length} фото
+        </p>
+      </div>
+
+      {/* Tablet/desktop grid */}
+      <div className="container-site mt-16 hidden sm:block">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {gallery.items.map((item) => (
             <figure key={item.src} className="min-w-0">
               <div
@@ -29,7 +61,7 @@ export function Gallery() {
                   src={item.src}
                   alt={item.alt}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 1024px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>

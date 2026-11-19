@@ -61,26 +61,6 @@ export function Pricing() {
             </li>
           ))}
         </ul>
-
-        <div className="mt-20 max-w-2xl">
-          <h3 className="font-display text-2xl font-semibold text-indigo">
-            {pricing.priceFactorsTitle}
-          </h3>
-          <p className="mt-4 text-indigo/75">{pricing.priceFactorsIntro}</p>
-          <ol className="mt-10 space-y-6">
-            {pricing.priceFactors.map((factor) => (
-              <li key={factor.n} className="grid gap-2 sm:grid-cols-[3.5rem_1fr] sm:gap-4">
-                <span className="font-display text-lg font-semibold text-teal">
-                  {factor.n}
-                </span>
-                <p className="text-indigo/80">
-                  <span className="font-semibold text-indigo">{factor.title}.</span>{" "}
-                  {factor.text}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
       </div>
     </section>
   );

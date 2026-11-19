@@ -20,18 +20,8 @@ export function Contacts() {
         />
 
         <div className="container-site relative py-16 sm:py-20">
-          <div className="grid gap-10 bg-white p-8 sm:gap-12 sm:p-12 lg:grid-cols-2 lg:gap-16">
-            <div className="min-w-0 bg-teal p-7 text-white sm:p-9 lg:order-2">
-              <h3 className="font-display text-xl font-semibold sm:text-2xl">
-                Финальная заявка
-              </h3>
-              <p className="mt-3 mb-7 text-sm text-white/90">
-                Напишите нам — вернёмся с расчётом сроков и стоимости.
-              </p>
-              <LeadCaptureForm variant="teal" submitLabel="Отправить" />
-            </div>
-
-            <div className="min-w-0 lg:order-1">
+          <div className="bg-white p-8 sm:p-12">
+            <div className="min-w-0 max-w-2xl">
               <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
                 {contacts.title}
               </h2>
@@ -79,6 +69,16 @@ export function Contacts() {
                   </dd>
                 </div>
               </dl>
+            </div>
+
+            <div className="mt-12 min-w-0 max-w-2xl bg-teal p-7 text-white sm:mt-14 sm:p-9">
+              <h3 className="font-display text-xl font-semibold sm:text-2xl">
+                Финальная заявка
+              </h3>
+              <p className="mt-3 mb-7 text-sm text-white/90">
+                Напишите нам — вернёмся с расчётом сроков и стоимости.
+              </p>
+              <LeadCaptureForm variant="teal" submitLabel="Отправить" />
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { navItems, objectsNav, site } from "@/lib/content";
+import { navItems, site } from "@/lib/content";
 
 type SideNavProps = {
   open: boolean;
@@ -59,25 +59,6 @@ export function SideNav({ open, onClose }: SideNavProps) {
         </div>
 
         <nav className="flex-1 overflow-y-auto px-5 py-6">
-          <div className="mb-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-hot">
-              Виды объектов
-            </p>
-            <ul className="mt-3 space-y-2 border-l-2 border-teal/40 pl-4">
-              {objectsNav.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={onClose}
-                    className="block py-1 text-base font-medium text-indigo hover:text-teal-hot"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <ul className="space-y-1">
             {navItems.map((item) => (
               <li key={item.id}>

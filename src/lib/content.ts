@@ -40,23 +40,8 @@ export const site = {
   },
 } as const;
 
-/** Виды объектов — якоря внутри блока #objects */
-export const objectsNav = [
-  { id: "object-poultry", label: "Птичники" },
-  { id: "object-cowshed", label: "Коровники" },
-  { id: "object-pigsty", label: "Свинарники" },
-  { id: "object-warehouse", label: "Склады" },
-  { id: "object-hangar", label: "Ангары" },
-  { id: "object-workshop", label: "Цеха" },
-  { id: "object-storage", label: "Хранилища" },
-] as const;
-
 export const navItems = [
   { id: "objects", label: "Объекты" },
-  { id: "result", label: "Результат" },
-  { id: "lead", label: "Заявка" },
-  { id: "scenario", label: "Этапы" },
-  { id: "advantages", label: "Преимущества" },
   { id: "pricing", label: "Цены" },
   { id: "gallery", label: "Галерея" },
   { id: "contacts", label: "Контакты" },

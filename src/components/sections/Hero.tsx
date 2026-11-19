@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { hero } from "@/lib/content";
+import { hero, site } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -26,7 +26,7 @@ export function Hero() {
             </h1>
             <p className="lead mt-6 max-w-full text-white/90">{hero.subtitle}</p>
             <div className="mt-10 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a href="#lead" className="btn-primary w-full sm:w-auto">
+              <a href={`tel:${site.phoneTel}`} className="btn-primary w-full sm:w-auto">
                 {hero.cta}
               </a>
               <a href="#objects" className="btn-ghost-light w-full sm:w-auto">

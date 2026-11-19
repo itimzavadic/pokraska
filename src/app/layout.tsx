@@ -19,8 +19,8 @@ const sourceSerif = Source_Serif_4({
   display: "swap",
 });
 
-const title = `${site.tagline} в ${site.city} | ${site.companyName}`;
-const description = `Побелка производственных помещений в ${site.city} и ${site.region}: птичники, коровники, свинарники, склады, ангары, цеха и хранилища. Подготовка поверхностей, короткие сроки. Звоните ${site.phone}.`;
+const title = `Побелка производственных помещений в ${site.city} | ${site.companyName}`;
+const description = `Побелка производственных помещений в ${site.city} и ${site.region}: побелка складов, цехов, ангаров, птичников, коровников и хранилищ. Подготовка поверхностей, побелка стен и потолков, короткие сроки. Звоните ${site.phone}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
@@ -30,12 +30,18 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
+    "побелка производственных помещений",
     `побелка производственных помещений ${site.city}`,
-    `побелка складов ${site.region}`,
-    `побелка птичников ${site.city}`,
+    `побелка производственных помещений ${site.region}`,
+    `побелка складов ${site.city}`,
+    `побелка цехов ${site.city}`,
     `побелка ангаров ${site.region}`,
-    `побелка ферм ${site.city}`,
-    `побелка цехов ${site.region}`,
+    `побелка птичников ${site.city}`,
+    `побелка коровников ${site.region}`,
+    `побелка свинарников ${site.city}`,
+    `побелка ферм ${site.region}`,
+    `побелка стен и потолков ${site.city}`,
+    "побелка промышленных помещений",
     site.city,
     site.region,
     site.companyName,

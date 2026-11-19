@@ -2,7 +2,7 @@ import { audience, pricing, site } from "@/lib/content";
 
 export function JsonLd() {
   const serviceName = "Побелка производственных помещений";
-  const serviceDescription = `${serviceName} в ${site.city} и ${site.region}: птичники, коровники, свинарники, склады, ангары, цеха и хранилища. Подготовка и мойка поверхностей, побелка стен и потолков.`;
+  const serviceDescription = `Профессиональная побелка производственных помещений в ${site.city} и ${site.region}: побелка складов, цехов, ангаров, птичников, коровников, свинарников и хранилищ. Подготовка и мойка поверхностей, побелка стен и потолков под санитарные требования.`;
 
   const localBusiness = {
     "@context": "https://schema.org",

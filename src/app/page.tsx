@@ -4,7 +4,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Audience } from "@/components/sections/Audience";
 import { Result } from "@/components/sections/Result";
 import { Lead } from "@/components/sections/Lead";
-import { Scenario } from "@/components/sections/Scenario";
 import { Advantages } from "@/components/sections/Advantages";
 import { Pricing } from "@/components/sections/Pricing";
 import { Gallery } from "@/components/sections/Gallery";
@@ -19,7 +18,6 @@ export default function HomePage() {
         <Audience />
         <Result />
         <Lead />
-        <Scenario />
         <Advantages />
         <Pricing />
         <Gallery />

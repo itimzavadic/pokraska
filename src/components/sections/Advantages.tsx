@@ -8,7 +8,6 @@ export function Advantages() {
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
             {advantages.title}
           </h2>
-          <p className="lead mt-5 text-white/90">{advantages.subtitle}</p>
         </div>
 
         <ul className="mt-16 grid gap-12 md:grid-cols-2 md:gap-x-14 md:gap-y-14">

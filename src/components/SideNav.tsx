@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { navItems, site } from "@/lib/content";
+import { SocialIcons } from "./SocialIcons";
 
 type SideNavProps = {
   open: boolean;
@@ -84,6 +85,9 @@ export function SideNav({ open, onClose }: SideNavProps) {
           <a href="#lead" onClick={onClose} className="btn-primary mt-3 w-full">
             Оставить заявку
           </a>
+          <div className="mt-5 flex justify-center">
+            <SocialIcons tone="onLight" />
+          </div>
         </div>
       </aside>
     </div>

@@ -1,9 +1,15 @@
 import { site } from "@/lib/content";
 
-const iconClass =
-  "flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-teal hover:bg-teal hover:text-white";
+type SocialIconsProps = {
+  tone?: "onDark" | "onLight";
+};
 
-export function SocialIcons() {
+export function SocialIcons({ tone = "onDark" }: SocialIconsProps) {
+  const iconClass =
+    tone === "onLight"
+      ? "flex h-11 w-11 items-center justify-center rounded-full border border-indigo/20 text-indigo transition hover:border-teal hover:bg-teal hover:text-white"
+      : "flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-teal hover:bg-teal hover:text-white";
+
   return (
     <ul className="flex flex-wrap gap-3">
       <li>

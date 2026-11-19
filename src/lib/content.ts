@@ -182,7 +182,7 @@ export const pricing = {
 export const gallery = {
   title: "Выполненные объекты",
   subtitle:
-    "Примеры работ на объектах: фасады, склады и производственные здания.",
+    "Примеры работ на объектах: фасады и производственные здания.",
   ctaLabel: "Обсудить ваш объект",
   items: [
     {
@@ -234,75 +234,15 @@ export const gallery = {
       tall: true,
     },
     {
-      label: "Производственный объект",
-      src: "/images/gallery/09.jpg",
-      alt: "Производственный объект",
-      tall: true,
-    },
-    {
-      label: "Производство",
-      src: "/images/gallery/10.jpg",
-      alt: "Производственное помещение",
-      tall: false,
-    },
-    {
-      label: "Ангар",
-      src: "/images/gallery/11.jpg",
-      alt: "Ангар / складской объект",
-      tall: false,
-    },
-    {
-      label: "Конструкции",
-      src: "/images/gallery/12.jpg",
-      alt: "Промышленные конструкции",
-      tall: false,
-    },
-    {
-      label: "На объекте",
-      src: "/images/gallery/13.jpg",
-      alt: "Работы на объекте",
-      tall: false,
-    },
-    {
       label: "Побелка",
-      src: "/images/gallery/14.jpg",
+      src: "/images/gallery/09.jpg",
       alt: "Побелка помещений",
       tall: true,
     },
     {
       label: "Работы по объекту",
-      src: "/images/gallery/15.jpg",
+      src: "/images/gallery/10.jpg",
       alt: "Работы на объекте",
-      tall: true,
-    },
-    {
-      label: "Подготовка поверхностей",
-      src: "/images/gallery/16.jpg",
-      alt: "Подготовка поверхностей",
-      tall: true,
-    },
-    {
-      label: "Обслуживание объекта",
-      src: "/images/gallery/17.jpg",
-      alt: "Работы на объекте",
-      tall: true,
-    },
-    {
-      label: "Склад",
-      src: "/images/gallery/18.jpg",
-      alt: "Складское помещение",
-      tall: false,
-    },
-    {
-      label: "Складской объект",
-      src: "/images/gallery/19.jpg",
-      alt: "Складской объект",
-      tall: false,
-    },
-    {
-      label: "Мойка поверхностей",
-      src: "/images/gallery/20.jpg",
-      alt: "Мойка и подготовка поверхностей",
       tall: true,
     },
   ],

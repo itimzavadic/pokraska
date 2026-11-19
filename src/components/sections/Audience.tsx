@@ -3,7 +3,7 @@ import { audience, site } from "@/lib/content";
 
 export function Audience() {
   return (
-    <section id="audience" className="section-pad bg-teal text-white">
+    <section id="objects" className="section-pad bg-teal text-white">
       <div className="container-site flex min-w-0 flex-col gap-14 lg:flex-row lg:items-start lg:gap-20">
         <div className="w-full min-w-0 flex-1">
           <p className="label mb-4 text-white/80">
@@ -17,13 +17,23 @@ export function Audience() {
           <p className="mt-14 text-sm font-semibold text-white">{audience.lead}</p>
           <ul className="mt-8 grid gap-10 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12">
             {audience.items.map((item) => (
-              <li key={item.title} className="border-l-2 border-white/40 pl-5">
+              <li
+                key={item.id}
+                id={item.id}
+                className="scroll-mt-36 border-l-2 border-white/40 pl-5"
+              >
                 <h3 className="font-sans text-lg font-bold tracking-tight text-white">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/85">
                   {item.text}
                 </p>
+                <a
+                  href="#lead"
+                  className="mt-4 inline-block text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
+                >
+                  Получить расчёт
+                </a>
               </li>
             ))}
           </ul>
@@ -33,7 +43,7 @@ export function Audience() {
           <div className="overflow-hidden border border-white/20">
             <Image
               src="/images/bg/audience.jpg"
-              alt="Побелка и покраска промышленного объекта"
+              alt="Побелка производственного помещения"
               width={973}
               height={1024}
               sizes="(max-width: 640px) 20rem, (max-width: 1024px) 24rem, 26rem"

@@ -83,7 +83,7 @@ export function Contacts() {
                 Финальная заявка
               </h3>
               <p className="mt-3 mb-7 text-sm text-white/90">
-                Напишите об объекте — вернёмся с расчётом сроков и стоимости.
+                Напишите о побелке объекта — вернёмся с расчётом сроков и стоимости.
               </p>
               <LeadCaptureForm variant="teal" submitLabel="Отправить" />
             </div>

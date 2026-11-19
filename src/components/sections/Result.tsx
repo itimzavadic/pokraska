@@ -29,6 +29,10 @@ export function Result() {
             </li>
           ))}
         </ul>
+
+        <a href="#lead" className="btn-primary mt-14 inline-flex">
+          Получить расчёт побелки
+        </a>
       </div>
     </section>
   );

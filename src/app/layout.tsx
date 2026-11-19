@@ -20,7 +20,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 const title = `${site.tagline} в ${site.city} | ${site.companyName}`;
-const description = `Побелка и покраска производственных помещений в Витебск и Витебская область. Красим стены, потолки и конструкции. Птичники, коровники, свинарники, склады, ангары и др. Короткие сроки. Звоните ${site.phone}.`;
+const description = `Побелка производственных помещений в ${site.city} и ${site.region}: птичники, коровники, свинарники, склады, ангары, цеха и хранилища. Подготовка поверхностей, короткие сроки. Звоните ${site.phone}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
@@ -30,11 +30,12 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
-    `покраска складов ${site.city}`,
-    `покраска производственных помещений ${site.region}`,
-    `побелка помещений ${site.city}`,
-    `мойка птичников ${site.region}`,
-    `мойка крыш ${site.city}`,
+    `побелка производственных помещений ${site.city}`,
+    `побелка складов ${site.region}`,
+    `побелка птичников ${site.city}`,
+    `побелка ангаров ${site.region}`,
+    `побелка ферм ${site.city}`,
+    `побелка цехов ${site.region}`,
     site.city,
     site.region,
     site.companyName,

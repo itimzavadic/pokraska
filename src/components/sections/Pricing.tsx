@@ -12,12 +12,18 @@ export function Pricing() {
           <p className="lead mt-5 text-indigo/80">
             {pricing.locationLine}{" "}
             <span className="font-semibold text-teal-hot">{site.city}</span> и{" "}
-            {site.region}. Покраска складов, побелка и мойка помещений.
+            {site.region}. {pricing.intro}
           </p>
           <p className="mt-4 text-sm text-indigo/55">{pricing.note}</p>
+          <a
+            href="#objects"
+            className="mt-5 inline-block text-sm font-semibold text-teal-hot hover:underline"
+          >
+            {pricing.objectsLinkLabel}
+          </a>
         </div>
 
-        <ul className="mt-16 grid gap-10 md:grid-cols-2 md:gap-12">
+        <ul className="mt-16 grid gap-10 md:grid-cols-1 md:max-w-2xl">
           {pricing.items.map((row) => (
             <li
               key={row.id}
@@ -29,7 +35,7 @@ export function Pricing() {
                   src={row.image}
                   alt={row.service}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 42rem"
                   className="object-cover"
                 />
               </div>
@@ -48,6 +54,9 @@ export function Pricing() {
                 <p className="mt-4 text-sm leading-relaxed text-indigo/75">
                   {row.description}
                 </p>
+                <a href="#lead" className="btn-primary mt-8 w-fit">
+                  Получить расчёт
+                </a>
               </div>
             </li>
           ))}

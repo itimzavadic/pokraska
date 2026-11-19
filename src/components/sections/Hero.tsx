@@ -7,7 +7,7 @@ export function Hero() {
       <div className="relative min-h-[min(68vh,34rem)] sm:min-h-[min(64vh,36rem)]">
         <Image
           src="/images/bg/hero-paint.jpg"
-          alt="Промышленная покраска конструкций"
+          alt="Побелка производственных помещений"
           fill
           priority
           sizes="100vw"
@@ -26,10 +26,10 @@ export function Hero() {
             </h1>
             <p className="lead mt-6 max-w-full text-white/90">{hero.subtitle}</p>
             <div className="mt-10 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a href="#contacts" className="btn-primary w-full sm:w-auto">
+              <a href="#lead" className="btn-primary w-full sm:w-auto">
                 {hero.cta}
               </a>
-              <a href="#pricing" className="btn-ghost-light w-full sm:w-auto">
+              <a href="#objects" className="btn-ghost-light w-full sm:w-auto">
                 {hero.secondary}
               </a>
             </div>

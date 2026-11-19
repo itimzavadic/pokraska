@@ -49,6 +49,10 @@ export function FAQ() {
             );
           })}
         </div>
+
+        <a href="#lead" className="btn-primary mt-12 inline-flex">
+          Оставить заявку на побелку
+        </a>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { navItems, servicesNav, site } from "@/lib/content";
+import { navItems, objectsNav, site } from "@/lib/content";
 
 type SideNavProps = {
   open: boolean;
@@ -61,13 +61,13 @@ export function SideNav({ open, onClose }: SideNavProps) {
         <nav className="flex-1 overflow-y-auto px-5 py-6">
           <div className="mb-6">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-hot">
-              Услуги
+              Виды объектов
             </p>
             <ul className="mt-3 space-y-2 border-l-2 border-teal/40 pl-4">
-              {servicesNav.map((item) => (
+              {objectsNav.map((item) => (
                 <li key={item.id}>
                   <a
-                    href={item.href}
+                    href={`#${item.id}`}
                     onClick={onClose}
                     className="block py-1 text-base font-medium text-indigo hover:text-teal-hot"
                   >
@@ -100,8 +100,8 @@ export function SideNav({ open, onClose }: SideNavProps) {
           >
             {site.phone}
           </a>
-          <a href="#contacts" onClick={onClose} className="btn-primary mt-3 w-full">
-            Связаться
+          <a href="#lead" onClick={onClose} className="btn-primary mt-3 w-full">
+            Оставить заявку
           </a>
         </div>
       </aside>

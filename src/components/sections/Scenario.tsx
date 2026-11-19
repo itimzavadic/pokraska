@@ -55,7 +55,7 @@ export function Scenario() {
                   <p className="text-base font-bold text-indigo sm:text-lg">
                     {scenario.ctaHint}
                   </p>
-                  <a href="#contacts" className="btn-primary">
+                  <a href="#lead" className="btn-primary">
                     {scenario.ctaLabel}
                   </a>
                 </div>

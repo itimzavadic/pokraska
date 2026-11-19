@@ -14,29 +14,10 @@ export function Audience() {
           </h2>
           <p className="lead mt-6 max-w-xl text-white/90">{audience.subtitle}</p>
 
-          <p className="mt-14 text-sm font-semibold text-white">{audience.lead}</p>
-          <ul className="mt-8 grid gap-10 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12">
-            {audience.items.map((item) => (
-              <li
-                key={item.id}
-                id={item.id}
-                className="scroll-mt-36 border-l-2 border-white/40 pl-5"
-              >
-                <h3 className="font-sans text-lg font-bold tracking-tight text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/85">
-                  {item.text}
-                </p>
-                <a
-                  href="#lead"
-                  className="mt-4 inline-block text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
-                >
-                  Получить расчёт
-                </a>
-              </li>
-            ))}
-          </ul>
+          <p className="mt-10 max-w-xl text-sm leading-relaxed text-white/85">
+            <span className="font-semibold text-white">{audience.typesLabel}</span>{" "}
+            {audience.types.join(", ")}.
+          </p>
         </div>
 
         <div className="mx-auto w-full max-w-[20rem] shrink-0 sm:max-w-[24rem] lg:mx-0 lg:max-w-[26rem] lg:pt-2">

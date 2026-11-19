@@ -46,15 +46,14 @@ export function JsonLd() {
     image: `${site.domain}/images/bg/hero-paint.jpg`,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Виды объектов для побелки",
-      itemListElement: audience.items.map((item, index) => ({
+      name: "Виды помещений для побелки",
+      itemListElement: audience.types.map((name, index) => ({
         "@type": "Offer",
         position: index + 1,
         itemOffered: {
           "@type": "Service",
-          name: `Побелка: ${item.title}`,
-          description: item.text,
-          url: `${site.domain}/#${item.id}`,
+          name: `Побелка: ${name}`,
+          url: `${site.domain}/#objects`,
         },
       })),
     },
@@ -109,13 +108,12 @@ export function JsonLd() {
   const objectList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Виды объектов для побелки",
-    itemListElement: audience.items.map((item, index) => ({
+    name: "Виды помещений для побелки",
+    itemListElement: audience.types.map((name, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: item.title,
-      url: `${site.domain}/#${item.id}`,
-      description: item.text,
+      name: name,
+      url: `${site.domain}/#objects`,
     })),
   };
 

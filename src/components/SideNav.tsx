@@ -86,7 +86,7 @@ export function SideNav({ open, onClose }: SideNavProps) {
             Оставить заявку
           </a>
           <div className="mt-5 flex justify-center">
-            <SocialIcons tone="onLight" />
+            <SocialIcons tone="onLight" size="sm" />
           </div>
         </div>
       </aside>

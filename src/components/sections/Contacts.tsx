@@ -20,8 +20,18 @@ export function Contacts() {
         />
 
         <div className="container-site relative py-16 sm:py-20">
-          <div className="grid gap-14 bg-white p-8 sm:p-12 lg:grid-cols-2 lg:gap-16">
-            <div className="min-w-0">
+          <div className="grid gap-10 bg-white p-8 sm:gap-12 sm:p-12 lg:grid-cols-2 lg:gap-16">
+            <div className="min-w-0 bg-teal p-7 text-white sm:p-9 lg:order-2">
+              <h3 className="font-display text-xl font-semibold sm:text-2xl">
+                Финальная заявка
+              </h3>
+              <p className="mt-3 mb-7 text-sm text-white/90">
+                Напишите нам — вернёмся с расчётом сроков и стоимости.
+              </p>
+              <LeadCaptureForm variant="teal" submitLabel="Отправить" />
+            </div>
+
+            <div className="min-w-0 lg:order-1">
               <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
                 {contacts.title}
               </h2>
@@ -69,23 +79,6 @@ export function Contacts() {
                   </dd>
                 </div>
               </dl>
-
-              <a
-                href={`tel:${site.phoneTel}`}
-                className="btn-primary mt-10 inline-flex"
-              >
-                {contacts.cta}
-              </a>
-            </div>
-
-            <div className="min-w-0 bg-teal p-7 text-white sm:p-9">
-              <h3 className="font-display text-xl font-semibold sm:text-2xl">
-                Финальная заявка
-              </h3>
-              <p className="mt-3 mb-7 text-sm text-white/90">
-                Напишите о побелке объекта — вернёмся с расчётом сроков и стоимости.
-              </p>
-              <LeadCaptureForm variant="teal" submitLabel="Отправить" />
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { SmartPicture } from "@/components/SmartPicture";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="section-pad scroll-mt-28 bg-white">
+    <section id="pricing" data-section className="section-pad bg-white">
       <div className="container-site">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
@@ -28,7 +28,7 @@ export function Pricing() {
             <li
               key={row.id}
               id={row.id}
-              className="flex scroll-mt-36 flex-col overflow-hidden border border-indigo/10"
+              className="flex scroll-mt-[var(--header-offset,4.75rem)] flex-col overflow-hidden border border-indigo/10"
             >
               <div className="relative aspect-[16/10]">
                 <SmartPicture

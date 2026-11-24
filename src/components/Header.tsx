@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { site } from "@/lib/content";
 import { SmartPicture } from "./SmartPicture";
 import { SideNav } from "./SideNav";
@@ -8,9 +8,34 @@ import { SideNav } from "./SideNav";
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const header = document.querySelector<HTMLElement>("[data-site-header]");
+    if (!header) return;
+
+    const syncOffset = () => {
+      const height = Math.ceil(header.getBoundingClientRect().height);
+      document.documentElement.style.setProperty(
+        "--header-offset",
+        `${height}px`,
+      );
+    };
+
+    syncOffset();
+    const observer = new ResizeObserver(syncOffset);
+    observer.observe(header);
+    window.addEventListener("resize", syncOffset);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", syncOffset);
+    };
+  }, []);
+
   return (
     <>
-      <header className="sticky top-0 z-[300] max-w-full overflow-x-clip border-b border-indigo/10 bg-white/95 backdrop-blur-sm">
+      <header
+        data-site-header
+        className="sticky top-0 z-[300] max-w-full overflow-x-clip border-b border-indigo/10 bg-white/95 backdrop-blur-sm"
+      >
         <div className="container-site flex max-w-full items-center justify-between gap-3 py-3 sm:py-3.5">
           <a
             href="#hero"

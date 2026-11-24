@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BottomNav } from "@/components/BottomNav";
+import { AnchorScroll } from "@/components/AnchorScroll";
 import { Hero } from "@/components/sections/Hero";
 import { Audience } from "@/components/sections/Audience";
 import { Result } from "@/components/sections/Result";
@@ -13,6 +14,7 @@ import { Contacts } from "@/components/sections/Contacts";
 export default function HomePage() {
   return (
     <>
+      <AnchorScroll />
       <Header />
       <main>
         <Hero />

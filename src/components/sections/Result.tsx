@@ -2,7 +2,7 @@ import { result } from "@/lib/content";
 
 export function Result() {
   return (
-    <section id="result" className="section-pad bg-white">
+    <section id="result" data-section className="section-pad bg-white">
       <div className="container-site">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">

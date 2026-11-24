@@ -3,7 +3,7 @@ import { SmartPicture } from "@/components/SmartPicture";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-indigo-deep">
+    <section id="hero" data-section className="relative overflow-hidden bg-indigo-deep">
       <div className="relative min-h-[min(68vh,34rem)] sm:min-h-[min(64vh,36rem)]">
         <SmartPicture
           src="/images/bg/hero-paint.jpg"

@@ -3,7 +3,7 @@ import { SmartPicture } from "@/components/SmartPicture";
 
 export function Audience() {
   return (
-    <section id="objects" className="section-pad scroll-mt-28 bg-teal text-white">
+    <section id="objects" data-section className="section-pad bg-teal text-white">
       <div className="container-site flex min-w-0 flex-col gap-14 lg:flex-row lg:items-start lg:gap-20">
         <div className="w-full min-w-0 flex-1">
           <p className="label mb-4 text-white/80">

@@ -4,7 +4,7 @@ import { SmartPicture } from "@/components/SmartPicture";
 
 export function Contacts() {
   return (
-    <section id="contacts" className="relative scroll-mt-28 overflow-hidden bg-indigo-deep">
+    <section id="contacts" data-section className="relative overflow-hidden bg-indigo-deep">
       <div className="relative">
         <SmartPicture
           src="/images/bg/hero-paint.jpg"

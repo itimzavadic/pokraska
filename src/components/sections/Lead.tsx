@@ -3,7 +3,7 @@ import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 
 export function Lead() {
   return (
-    <section id="lead" className="section-pad bg-teal text-white">
+    <section id="lead" data-section className="section-pad bg-teal text-white">
       <div className="container-site grid gap-14 lg:grid-cols-2 lg:items-start lg:gap-20">
         <div className="min-w-0">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">

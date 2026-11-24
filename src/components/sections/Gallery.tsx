@@ -3,7 +3,7 @@ import { SmartPicture } from "@/components/SmartPicture";
 
 export function Gallery() {
   return (
-    <section id="gallery" className="section-pad scroll-mt-28 bg-indigo-deep">
+    <section id="gallery" data-section className="section-pad bg-indigo-deep">
       <div className="container-site">
         <div className="flex max-w-3xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl text-white">

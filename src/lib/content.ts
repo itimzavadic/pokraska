@@ -207,6 +207,6 @@ export const gallery = {
 };
 
 export const contacts = {
-  title: "Оформить заказ на побелку",
+  title: "Заказать звонок",
   regionLabel: "Витебск и Витебская область",
 };

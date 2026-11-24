@@ -44,24 +44,29 @@ export function LeadCaptureForm({
     setError("");
     setPending(true);
 
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 6000);
+
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
+      const response = await fetch("/send.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          name,
-          phone,
-          message: message || "—",
-          _subject: `Заявка с сайта «${site.companyName}»`,
-          _template: "table",
-          _captcha: "false",
-        }),
+        body: JSON.stringify({ name, phone, message: message || "—" }),
+        signal: controller.signal,
       });
 
       if (!response.ok) {
+        setError("Не удалось отправить заявку");
+        return;
+      }
+
+      const result = (await response.json().catch(() => null)) as
+        | { ok?: boolean }
+        | null;
+      if (!result?.ok) {
         setError("Не удалось отправить заявку");
         return;
       }
@@ -70,8 +75,9 @@ export function LeadCaptureForm({
       setConsent(false);
       setToastOpen(true);
     } catch {
-      setError("Не удалось отправить заявку. Проверьте соединение.");
+      setError("Не удалось отправить заявку. Попробуйте ещё раз или позвоните.");
     } finally {
+      window.clearTimeout(timeout);
       setPending(false);
     }
   }
@@ -149,8 +155,7 @@ export function LeadCaptureForm({
               className="underline decoration-white/50 underline-offset-2 hover:decoration-white"
             >
               обработку персональных данных
-            </a>{" "}
-            для связи по заявке
+            </a>
           </span>
         </label>
         {error && (

@@ -10,12 +10,58 @@ type LeadCaptureFormProps = {
   compact?: boolean;
 };
 
+async function sendViaPhp(payload: {
+  name: string;
+  phone: string;
+  message: string;
+}): Promise<boolean> {
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 4000);
+
+  try {
+    const response = await fetch("/send.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+
+    if (!response.ok) return false;
+    const result = (await response.json().catch(() => null)) as
+      | { ok?: boolean }
+      | null;
+    return Boolean(result?.ok);
+  } catch {
+    return false;
+  } finally {
+    window.clearTimeout(timeout);
+  }
+}
+
+function openMailto(payload: {
+  name: string;
+  phone: string;
+  message: string;
+}) {
+  const subject = encodeURIComponent(`Заявка с сайта «${site.companyName}»`);
+  const body = encodeURIComponent(
+    `Имя: ${payload.name}\nТелефон: ${payload.phone}\nСообщение: ${payload.message}\n`,
+  );
+  window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+}
+
 export function LeadCaptureForm({
   variant = "teal",
   submitLabel = "Отправить заявку",
   compact = false,
 }: LeadCaptureFormProps) {
   const [toastOpen, setToastOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState(
+    "Заявка отправлена. Мы свяжемся с вами.",
+  );
   const [error, setError] = useState("");
   const [consent, setConsent] = useState(false);
   const [pending, setPending] = useState(false);
@@ -26,7 +72,7 @@ export function LeadCaptureForm({
     const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
     const phone = String(data.get("phone") || "").trim();
-    const message = String(data.get("message") || "").trim();
+    const message = String(data.get("message") || "").trim() || "—";
 
     if (name.length < 2) {
       setError("Укажите имя");
@@ -44,42 +90,22 @@ export function LeadCaptureForm({
     setError("");
     setPending(true);
 
-    const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 6000);
+    const payload = { name, phone, message };
+    const delivered = await sendViaPhp(payload);
 
-    try {
-      const response = await fetch("/send.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ name, phone, message: message || "—" }),
-        signal: controller.signal,
-      });
-
-      if (!response.ok) {
-        setError("Не удалось отправить заявку");
-        return;
-      }
-
-      const result = (await response.json().catch(() => null)) as
-        | { ok?: boolean }
-        | null;
-      if (!result?.ok) {
-        setError("Не удалось отправить заявку");
-        return;
-      }
-
-      form.reset();
-      setConsent(false);
-      setToastOpen(true);
-    } catch {
-      setError("Не удалось отправить заявку. Попробуйте ещё раз или позвоните.");
-    } finally {
-      window.clearTimeout(timeout);
-      setPending(false);
+    if (!delivered) {
+      openMailto(payload);
+      setToastMessage(
+        "Откроется почта — нажмите «Отправить» в письме. Или позвоните нам.",
+      );
+    } else {
+      setToastMessage("Заявка отправлена. Мы свяжемся с вами.");
     }
+
+    form.reset();
+    setConsent(false);
+    setPending(false);
+    setToastOpen(true);
   }
 
   const fieldClass =
@@ -173,7 +199,7 @@ export function LeadCaptureForm({
       </form>
       <Toast
         open={toastOpen}
-        message="Заявка отправлена. Мы свяжемся с вами."
+        message={toastMessage}
         onClose={() => setToastOpen(false)}
       />
     </>

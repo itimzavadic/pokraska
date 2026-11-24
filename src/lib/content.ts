@@ -208,5 +208,6 @@ export const gallery = {
 
 export const contacts = {
   title: "Заказать звонок",
+  subtitle: "Оставьте телефон — перезвоним и уточним детали",
   regionLabel: "Витебск и Витебская область",
 };

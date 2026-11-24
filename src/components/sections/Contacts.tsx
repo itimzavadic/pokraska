@@ -25,6 +25,9 @@ export function Contacts() {
               <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
                 {contacts.title}
               </h2>
+              <p className="mt-3 text-base text-indigo/75 sm:text-lg">
+                {contacts.subtitle}
+              </p>
             </div>
 
             <div className="mt-8 min-w-0 max-w-2xl bg-teal p-7 text-white sm:mt-10 sm:p-9">

@@ -10,13 +10,17 @@ type LeadCaptureFormProps = {
   compact?: boolean;
 };
 
+type SendResult =
+  | { ok: true }
+  | { ok: false; kind: "activation" | "error"; message?: string };
+
 async function sendViaPhp(payload: {
   name: string;
   phone: string;
   message: string;
 }): Promise<boolean> {
   const controller = new AbortController();
-  const timeout = window.setTimeout(() => controller.abort(), 4000);
+  const timeout = window.setTimeout(() => controller.abort(), 3500);
 
   try {
     const response = await fetch("/send.php", {
@@ -28,7 +32,6 @@ async function sendViaPhp(payload: {
       body: JSON.stringify(payload),
       signal: controller.signal,
     });
-
     if (!response.ok) return false;
     const result = (await response.json().catch(() => null)) as
       | { ok?: boolean }
@@ -41,16 +44,55 @@ async function sendViaPhp(payload: {
   }
 }
 
-function openMailto(payload: {
+async function sendViaFormSubmit(payload: {
   name: string;
   phone: string;
   message: string;
-}) {
-  const subject = encodeURIComponent(`Заявка с сайта «${site.companyName}»`);
-  const body = encodeURIComponent(
-    `Имя: ${payload.name}\nТелефон: ${payload.phone}\nСообщение: ${payload.message}\n`,
-  );
-  window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+}): Promise<SendResult> {
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 12000);
+
+  try {
+    const response = await fetch(
+      `https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: payload.name,
+          phone: payload.phone,
+          message: payload.message,
+          _subject: `Заявка с сайта «${site.companyName}»`,
+          _template: "table",
+          _captcha: "false",
+          _honey: "",
+        }),
+        signal: controller.signal,
+      },
+    );
+
+    const data = (await response.json().catch(() => null)) as {
+      success?: boolean | string;
+      message?: string;
+    } | null;
+
+    const success = data?.success === true || data?.success === "true";
+    if (success) return { ok: true };
+
+    const message = data?.message || "";
+    if (/activat/i.test(message)) {
+      return { ok: false, kind: "activation", message };
+    }
+
+    return { ok: false, kind: "error", message };
+  } catch {
+    return { ok: false, kind: "error" };
+  } finally {
+    window.clearTimeout(timeout);
+  }
 }
 
 export function LeadCaptureForm({
@@ -91,21 +133,42 @@ export function LeadCaptureForm({
     setPending(true);
 
     const payload = { name, phone, message };
-    const delivered = await sendViaPhp(payload);
 
-    if (!delivered) {
-      openMailto(payload);
-      setToastMessage(
-        "Откроется почта — нажмите «Отправить» в письме. Или позвоните нам.",
-      );
-    } else {
+    // 1) Local PHP on hoster (no third-party), if uploaded
+    if (await sendViaPhp(payload)) {
+      form.reset();
+      setConsent(false);
       setToastMessage("Заявка отправлена. Мы свяжемся с вами.");
+      setToastOpen(true);
+      setPending(false);
+      return;
     }
 
-    form.reset();
-    setConsent(false);
+    // 2) FormSubmit — automatic email after one-time activation
+    const result = await sendViaFormSubmit(payload);
     setPending(false);
-    setToastOpen(true);
+
+    if (result.ok) {
+      form.reset();
+      setConsent(false);
+      setToastMessage("Заявка отправлена. Мы свяжемся с вами.");
+      setToastOpen(true);
+      return;
+    }
+
+    if (result.kind === "activation") {
+      form.reset();
+      setConsent(false);
+      setToastMessage(
+        `Проверьте ${site.email}: откройте письмо FormSubmit и нажмите Activate Form. Это один раз — дальше заявки будут приходить сами.`,
+      );
+      setToastOpen(true);
+      return;
+    }
+
+    setError(
+      `Не удалось отправить. Позвоните ${site.phone} или напишите на ${site.email}`,
+    );
   }
 
   const fieldClass =

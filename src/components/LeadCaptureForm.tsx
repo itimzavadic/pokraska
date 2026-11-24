@@ -141,7 +141,16 @@ export function LeadCaptureForm({
             disabled={pending}
           />
           <span>
-            Согласен(на) на обработку персональных данных для связи по заявке
+            Согласен(на) на{" "}
+            <a
+              href="/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-white/50 underline-offset-2 hover:decoration-white"
+            >
+              обработку персональных данных
+            </a>{" "}
+            для связи по заявке
           </span>
         </label>
         {error && (

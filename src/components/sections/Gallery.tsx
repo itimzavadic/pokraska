@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { gallery } from "@/lib/content";
+import { SmartPicture } from "@/components/SmartPicture";
 
 export function Gallery() {
   return (
-    <section id="gallery" className="section-pad bg-indigo-deep">
+    <section id="gallery" className="section-pad scroll-mt-28 bg-indigo-deep">
       <div className="container-site">
         <div className="flex max-w-3xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl text-white">
@@ -18,7 +18,6 @@ export function Gallery() {
         </div>
       </div>
 
-      {/* Mobile: horizontal snap gallery with all photos */}
       <div className="mt-10 sm:hidden">
         <div className="-mx-0 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <ul className="flex w-max gap-3 px-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))] snap-x snap-mandatory">
@@ -26,12 +25,13 @@ export function Gallery() {
               <li key={item.src} className="w-[78vw] max-w-[20rem] shrink-0 snap-center">
                 <figure className="min-w-0">
                   <div className="relative aspect-[3/4] overflow-hidden bg-indigo/20">
-                    <Image
+                    <SmartPicture
                       src={item.src}
                       alt={item.alt}
                       fill
                       sizes="78vw"
-                      className="object-cover"
+                      className="absolute inset-0"
+                      imgClassName="object-cover"
                     />
                   </div>
                 </figure>
@@ -41,7 +41,6 @@ export function Gallery() {
         </div>
       </div>
 
-      {/* Tablet/desktop grid */}
       <div className="container-site mt-16 hidden sm:block">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {gallery.items.map((item) => (
@@ -51,12 +50,13 @@ export function Gallery() {
                   item.tall ? "aspect-[3/4]" : "aspect-[4/3]"
                 }`}
               >
-                <Image
+                <SmartPicture
                   src={item.src}
                   alt={item.alt}
                   fill
                   sizes="(max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
+                  className="absolute inset-0"
+                  imgClassName="object-cover"
                 />
               </div>
             </figure>

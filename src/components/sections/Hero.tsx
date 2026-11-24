@@ -1,17 +1,18 @@
-import Image from "next/image";
 import { hero, site } from "@/lib/content";
+import { SmartPicture } from "@/components/SmartPicture";
 
 export function Hero() {
   return (
     <section id="hero" className="relative overflow-hidden bg-indigo-deep">
       <div className="relative min-h-[min(68vh,34rem)] sm:min-h-[min(64vh,36rem)]">
-        <Image
+        <SmartPicture
           src="/images/bg/hero-paint.jpg"
           alt="Побелка производственных помещений"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="absolute inset-0"
+          imgClassName="object-cover object-center"
         />
         <div
           className="absolute inset-0 bg-[linear-gradient(105deg,color-mix(in_srgb,var(--color-indigo-deep)_88%,transparent)_0%,color-mix(in_srgb,var(--color-indigo-deep)_72%,transparent)_48%,color-mix(in_srgb,var(--color-teal)_28%,transparent)_100%)]"

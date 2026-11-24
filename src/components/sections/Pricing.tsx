@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { pricing, site } from "@/lib/content";
+import { SmartPicture } from "@/components/SmartPicture";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="section-pad bg-white">
+    <section id="pricing" className="section-pad scroll-mt-28 bg-white">
       <div className="container-site">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold text-indigo sm:text-4xl">
@@ -31,12 +31,13 @@ export function Pricing() {
               className="flex scroll-mt-36 flex-col overflow-hidden border border-indigo/10"
             >
               <div className="relative aspect-[16/10]">
-                <Image
+                <SmartPicture
                   src={row.image}
                   alt={row.service}
                   fill
                   sizes="(max-width: 768px) 100vw, 42rem"
-                  className="object-cover"
+                  className="absolute inset-0"
+                  imgClassName="object-cover"
                 />
               </div>
               <div className="flex flex-1 flex-col p-7 sm:p-8">

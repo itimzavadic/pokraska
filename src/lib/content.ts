@@ -20,15 +20,10 @@ export const site = {
   addressFull: "211413, Республика Беларусь, Витебская область, г. Полоцк, проспект Иоанна Зодчего, д. 34",
   workHours: "Пн–Пт 9:00–18:00",
   responseTime: "Отвечаем в течение 1 часа в рабочее время",
-  yearsOnMarket: "[N]",
-  objectsCompleted: "[N+]",
-  guarantee: "[N] лет гарантии на работы",
   domain: "https://moem-belim-krasim.by",
   social: {
     viber: "viber://chat?number=%2B375298888049",
     telegram: "https://t.me/+375298888049",
-    instagram: "https://www.instagram.com/shtukaturotboga.by",
-    vk: "https://vk.ru/remont_kvartir_polock",
   },
   maps: {
     google:

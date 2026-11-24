@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { BottomNav } from "@/components/BottomNav";
 import { Hero } from "@/components/sections/Hero";
 import { Audience } from "@/components/sections/Audience";
 import { Result } from "@/components/sections/Result";
@@ -24,6 +25,7 @@ export default function HomePage() {
         <Contacts />
       </main>
       <Footer />
+      <BottomNav />
     </>
   );
 }

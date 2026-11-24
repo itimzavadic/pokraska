@@ -1,18 +1,18 @@
-import Image from "next/image";
 import { contacts, site } from "@/lib/content";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { SmartPicture } from "@/components/SmartPicture";
 
 export function Contacts() {
   return (
-    <section id="contacts" className="relative overflow-hidden bg-indigo-deep">
+    <section id="contacts" className="relative scroll-mt-28 overflow-hidden bg-indigo-deep">
       <div className="relative">
-        <Image
+        <SmartPicture
           src="/images/bg/hero-paint.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-45"
-          aria-hidden
+          className="absolute inset-0"
+          imgClassName="object-cover object-center opacity-45"
         />
         <div
           className="absolute inset-0 bg-[linear-gradient(115deg,color-mix(in_srgb,var(--color-indigo-deep)_88%,transparent)_0%,color-mix(in_srgb,var(--color-indigo-deep)_70%,transparent)_55%,color-mix(in_srgb,var(--color-teal)_35%,transparent)_100%)]"

@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { audience, site } from "@/lib/content";
+import { SmartPicture } from "@/components/SmartPicture";
 
 export function Audience() {
   return (
-    <section id="objects" className="section-pad bg-teal text-white">
+    <section id="objects" className="section-pad scroll-mt-28 bg-teal text-white">
       <div className="container-site flex min-w-0 flex-col gap-14 lg:flex-row lg:items-start lg:gap-20">
         <div className="w-full min-w-0 flex-1">
           <p className="label mb-4 text-white/80">
@@ -22,13 +22,13 @@ export function Audience() {
 
         <div className="mx-auto w-full max-w-[20rem] shrink-0 sm:max-w-[24rem] lg:mx-0 lg:max-w-[26rem] lg:pt-2">
           <div className="overflow-hidden border border-white/20">
-            <Image
+            <SmartPicture
               src="/images/bg/audience.jpg"
               alt="Побелка производственного помещения"
               width={973}
               height={1024}
               sizes="(max-width: 640px) 20rem, (max-width: 1024px) 24rem, 26rem"
-              className="h-auto w-full object-contain"
+              imgClassName="h-auto w-full object-contain"
             />
           </div>
         </div>

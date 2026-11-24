@@ -45,11 +45,14 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-site flex flex-col gap-2 py-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-site flex flex-col gap-2 py-6 pb-24 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © 2026 {site.ownerName}. {site.companyName}. {site.city},{" "}
             {site.region}.
           </p>
+          <a href="/privacy" className="hover:text-teal-soft">
+            Политика персональных данных
+          </a>
         </div>
       </div>
     </footer>

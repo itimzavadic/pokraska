@@ -11,7 +11,7 @@ type ToastProps = {
 export function Toast({ message, open, onClose }: ToastProps) {
   useEffect(() => {
     if (!open) return;
-    const id = window.setTimeout(onClose, 3200);
+    const id = window.setTimeout(onClose, Math.min(12000, 2800 + message.length * 35));
     return () => window.clearTimeout(id);
   }, [open, onClose]);
 

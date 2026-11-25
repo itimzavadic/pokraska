@@ -78,9 +78,9 @@ export function SideNav({ open, onClose }: SideNavProps) {
         <div className="border-t border-indigo/10 p-5">
           <a
             href={`tel:${site.phoneTel}`}
-            className="block text-center text-sm font-semibold text-teal-hot"
+            className="btn-primary mt-0 w-full"
           >
-            {site.phone}
+            Позвонить
           </a>
           <a href="#lead" onClick={onClose} className="btn-primary mt-3 w-full">
             Оставить заявку

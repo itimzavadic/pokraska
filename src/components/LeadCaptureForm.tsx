@@ -178,8 +178,8 @@ export function LeadCaptureForm({
 
   const buttonClass =
     variant === "teal"
-      ? "w-full rounded-xl bg-white px-4 py-3 font-semibold text-indigo transition hover:bg-muted disabled:opacity-50"
-      : "w-full rounded-xl bg-teal px-4 py-3 font-semibold text-white transition hover:bg-teal-hot disabled:opacity-50";
+      ? "w-full rounded-full bg-white px-4 py-3 font-semibold text-indigo transition hover:bg-muted disabled:opacity-50"
+      : "w-full rounded-full bg-teal px-4 py-3 font-semibold text-white transition hover:bg-teal-hot disabled:opacity-50";
 
   const checkLabelClass =
     variant === "teal" ? "text-white/85" : "text-white/80";

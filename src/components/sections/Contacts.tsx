@@ -30,7 +30,7 @@ export function Contacts() {
               </p>
             </div>
 
-            <div className="mt-8 min-w-0 max-w-2xl bg-teal p-7 text-white sm:mt-10 sm:p-9">
+            <div className="mt-8 min-w-0 max-w-2xl rounded-3xl bg-teal p-7 text-white sm:mt-10 sm:p-9">
               <LeadCaptureForm variant="teal" submitLabel="Отправить" />
             </div>
 

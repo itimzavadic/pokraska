@@ -48,7 +48,7 @@
   color: var(--color-on-dark);
   font-weight: 600;
   padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-pill);
   box-shadow: var(--shadow-card);
   transition:
     transform var(--dur-short) var(--ease-out),
@@ -75,7 +75,7 @@
   color: var(--color-indigo);
   font-weight: 600;
   padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-pill);
   border: 1.5px solid color-mix(in srgb, var(--color-indigo) 25%, transparent);
   transition:
     border-color var(--dur-short) var(--ease-out),
@@ -96,7 +96,7 @@
   color: var(--color-on-dark);
   font-weight: 600;
   padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-pill);
   border: 1.5px solid color-mix(in srgb, var(--color-on-dark) 40%, transparent);
   transition: background var(--dur-short) var(--ease-out);
 }

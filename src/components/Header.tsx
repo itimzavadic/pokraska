@@ -36,12 +36,12 @@ export function Header() {
         data-site-header
         className="sticky top-0 z-[300] max-w-full overflow-x-clip border-b border-indigo/10 bg-white/95 backdrop-blur-sm"
       >
-        <div className="container-site flex max-w-full items-center justify-between gap-3 py-3 sm:py-3.5">
+        <div className="container-site flex max-w-full items-center justify-between gap-3 py-4 sm:py-5">
           <a
             href="#hero"
             className="group flex min-w-0 flex-1 items-center gap-0 overflow-hidden pr-2"
           >
-            <span className="flex min-w-0 flex-col font-sans text-base font-extrabold italic leading-[1.05] tracking-tight text-indigo sm:text-xl">
+            <span className="flex min-w-0 flex-col font-sans text-lg font-extrabold italic leading-[1.05] tracking-tight text-indigo sm:text-2xl">
               <span>Красим</span>
               <span>Белим</span>
               <span>Моем</span>
@@ -49,23 +49,23 @@ export function Header() {
             <SmartPicture
               src="/images/logo.png"
               alt={site.companyName}
-              width={200}
-              height={112}
+              width={340}
+              height={190}
               priority
-              imgClassName="-ml-3 -translate-y-1 h-12 w-auto shrink-0 object-contain sm:-ml-4 sm:h-14"
+              imgClassName="-ml-5 -translate-y-2 h-[5.25rem] w-auto shrink-0 object-contain sm:-ml-6 sm:-translate-y-2.5 sm:h-32"
             />
           </a>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <a
               href={`tel:${site.phoneTel}`}
-              className="inline-flex h-10 items-center justify-center bg-teal px-3.5 text-sm font-semibold text-white transition hover:bg-teal-hot sm:px-4"
+              className="inline-flex h-10 items-center justify-center rounded-full bg-teal px-4 text-sm font-semibold text-white transition hover:bg-teal-hot sm:h-11 sm:px-5"
             >
               Позвонить
             </a>
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center border border-indigo/15 text-indigo transition hover:border-teal hover:text-teal-hot sm:h-11 sm:w-11"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-indigo/15 text-indigo transition hover:border-teal hover:text-teal-hot sm:h-11 sm:w-11"
               aria-label="Открыть меню"
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen(true)}
